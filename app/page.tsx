@@ -23,7 +23,7 @@ export default function Home() {
           <Input placeholder="Email Address" type="email" />
           <Input placeholder="Phone Number" type="tel" />
           <Input placeholder="Your Message" />
-          <Button type="submit">Send Message</Button>
+          <Button variant={'destructive'} type="submit">Send Message</Button>
         </form>
       </section>
       </main>
