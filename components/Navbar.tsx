@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -21,14 +22,17 @@ const Navigation = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 left-0 z-50 right-0  bg-white border-b border-white/10">
+    <nav className="sticky top-0 left-0 z-50 right-0  bg-gradient-to-r bg-stone-100 border-b border-white/10">
       <div className="mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className=" flex justify-start">
-            
-              <Image src={'/logo.png'} alt={'logo'} height={120} width={150} className="object-contain"/>
-            
+            <Image
+              src={"/weblogo.svg"}
+              alt={"site-logo"}
+              width={120}
+              height={120}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,9 +49,16 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-red-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white">
-              Get Quote
-            </Button>
+            <Link href={"/contact"}>
+              <ShimmerButton
+                background="rgba(220, 38, 38, 1)"
+                className="shadow-2xl"
+              >
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  Get Started
+                </span>
+              </ShimmerButton>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -56,7 +67,11 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-black hover:text-red-400 transition-colors duration-300"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -77,9 +92,15 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="w-full bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white mt-4">
-                Get Quote
-              </Button>
+              <Link href={"/contact"}>
+                {" "}
+                <ShimmerButton
+                  background="rgba(220, 38, 38, 1)"
+                  className="w-full font bold mt-4"
+                >
+                  Get in touch
+                </ShimmerButton>
+              </Link>
             </div>
           </div>
         )}

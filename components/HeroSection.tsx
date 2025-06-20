@@ -1,16 +1,25 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="text-center  hero-bg space-y-6  h-[70vh] mx-auto">
-      <div className="flex flex-col justify-center gap-4 h-full items-center">
-        <h1 className="text-[1.6rem] sm:text-4xl md:max-w-2xl text-[#1E293B] font-bold">Empowering Businesses Through Innovative Web Solutions</h1>
-      <p className="md:text-lg md:max-w-3xl text-gray-600">
+     <BackgroundLines className="flex items-center justify-center w-full flex-col">
+      <h2 className="bg-clip-text md:max-w-6xl text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
+        Empowering Businesses Through <span className="text-red-600">Innovative Digital Solutions.</span>
+      </h2>
+      <p className="max-w-xl text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center mb-4">
         Full-Stack MERN Development and Custom Digital Services Designed to Scale With Your Vision.
       </p>
-      <Button>Get a Free Consultation</Button>
-      </div>
-    </section>
+
+      <Link href={'/contact'}><ShimmerButton className="shadow-2xl">
+      <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+        Get Started
+      </span>
+    </ShimmerButton></Link>
+
+    </BackgroundLines>
   );
 }
+

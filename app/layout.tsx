@@ -17,7 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Fully Digital Agency",
   description: "Ignite your startup’s growth with agile digital marketing, WhatsApp CRM, IVR calling & smart tech—designed for customer acquisition and scalable success",
+  icons: {
+    icon:'/favicon.svg'
+  }
 };
+
+
 
 export default function RootLayout({
   children,
