@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import ScrollProgress from "@/components/eldoraui/scrollprogress";
+import ClientLayout from "@/components/ClientLayout";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,13 +17,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Fully Digital Agency",
-  description: "Ignite your startup’s growth with agile digital marketing, WhatsApp CRM, IVR calling & smart tech—designed for customer acquisition and scalable success",
+  description:
+    "Ignite your startup’s growth with agile digital marketing, WhatsApp CRM, IVR calling & smart tech—designed for customer acquisition and scalable success",
   icons: {
-    icon:'/favicon.svg'
-  }
+    icon: "/favicon.svg",
+  },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -34,9 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
-        {children}
-        <Footer/>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ClientLayout>{children}</ClientLayout>
+        </body>
       </body>
     </html>
   );
