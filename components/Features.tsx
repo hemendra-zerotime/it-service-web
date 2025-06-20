@@ -1,24 +1,3 @@
-// export default function Features() {
-//   return (
-//     <section className="grid md:grid-cols-3 gap-6 text-center">
-//       <div>
-//         <div className="text-3xl">💻</div>
-//         <h3 className="font-semibold">Custom Web Applications</h3>
-//         <p className="text-sm text-gray-600">Tailored solutions for your business needs.</p>
-//       </div>
-//       <div>
-//         <div className="text-3xl">🧰</div>
-//         <h3 className="font-semibold">MERN Stack Development</h3>
-//         <p className="text-sm text-gray-600">Fast, secure, scalable full-stack apps.</p>
-//       </div>
-//       <div>
-//         <div className="text-3xl">📱</div>
-//         <h3 className="font-semibold">Responsive Design</h3>
-//         <p className="text-sm text-gray-600">Mobile-first, cross-device compatibility.</p>
-//       </div>
-//     </section>
-//   );
-// }
 import React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
@@ -43,7 +22,15 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="px-6 grid md:grid-cols-3 gap-6">
+    <section className="p-8 bg-gradient-to-r from-gray-300 to-gray-400 text-center">
+      <h2 className="text-black text-2xl md:text-5xl font-bold mb-2"
+       >
+      Why Choose Our Services?
+     </h2>
+     <p className="text-gray-600 mb-10 text-lg">
+      We combine technical expertise with creative innovation to deliver exceptional results
+     </p>
+    <div className="grid md:grid-cols-3 gap-6">
       {features.map((f, i) => (
         <Card key={i}>
           <CardContent className="p-6 space-y-4 text-center">
@@ -53,6 +40,7 @@ export default function Features() {
           </CardContent>
         </Card>
       ))}
+    </div>
     </section>
   );
 }
