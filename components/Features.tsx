@@ -77,11 +77,11 @@ const features = [
 export default function Features() {
   return (
     <section className="p-8 bg-gradient-to-r from-gray-300 to-gray-400 text-center">
-      <h2 className="text-black text-2xl md:text-5xl font-bold mb-2">
+      <h2 className="text-black text-2xl md:text-4xl font-bold mb-2">
         Why Choose Our Services?
       </h2>
       <div className="flex justify-center items-center">
-        <p className="text-gray-900 mb-10 max-w-7xl text-lg">
+        <p className="text-gray-900 mb-10 max-w-5xl text-1xl">
           As a results-driven digital partner, we specialize in crafting high-performing websites and executing data-backed digital marketing strategies that drive real business growth. Our professional team combines SEO, performance marketing, and smart automation tools like WhatsApp CRM and IVR to boost your brand visibility, engagement, and ROI. Choose us to scale smarter, rank higher, and convert better.
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function Features() {
                     className="mx-auto"
                   />
                   <h3 className="text-2xl font-semibold">{f.title}</h3>
-                  <p className="text-gray-600 text-lg">{f.desc}</p>
+                  <p className="text-gray-600 text-1xl">{f.desc}</p>
                 </CardContent>
               </Card>
             </CarouselItem>

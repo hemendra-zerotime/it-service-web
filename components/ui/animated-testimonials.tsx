@@ -43,10 +43,20 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+    <>
+     <h2 className="text-black text-2xl md:text-4xl font-bold mb-2 text-center">
+        What Our Clients Say
+      </h2>
+      <div className="flex justify-center items-center">
+        <p className="text-gray-900 max-w-5xl text-1xl">
+          Don't just take our word for it
+        </p>
+      </div>
+   
+    <div className="mx-auto max-w-sm px-4 pt-10 pb-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+      <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-80 w-80">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -77,7 +87,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom"
+                  className="absolute inset-0 origin-bottom flex justify-center"
                 >
                   <img
                     src={testimonial.src}
@@ -161,5 +171,6 @@ export const AnimatedTestimonials = ({
         </div>
       </div>
     </div>
+     </>
   );
 };
