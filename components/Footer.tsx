@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto space-y">
 
         {/* First Row - Four Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-2">
 
           {/* Company Info */}
           <div>
