@@ -75,7 +75,9 @@ export default function Home() {
         <HeroSection />
         <Features />
         <ThreeDMarqueeDemo/>
-        <AnimatedTestimonialsDemo/>
+        <div className='max-sm:px-8 max-sm:py-4'>
+        <AnimatedTestimonialsDemo />
+        </div>
       </main>
     </>
   );

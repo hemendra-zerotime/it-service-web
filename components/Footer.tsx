@@ -1,21 +1,37 @@
-import {  Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Github,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-300 bottom-0 px-6">
-      <div className=" mx-auto py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+    <footer className="relative bg-gray-300 bottom-0 px-4 sm:px-6 lg:px-2">
+      <div className="max-w-7xl mx-auto py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-             <Image src={'/weblogo.svg'} alt={'logo'} height={120} width={150}/>
+          <div className="lg:col-span-2">
+            <Link href="/" className="flex items-center mb-6">
+              <Image
+                src="/weblogo.svg"
+                alt="logo"
+                height={120}
+                width={150}
+                priority
+              />
             </Link>
-            <p className="text-gray-00 text-lg leading-relaxed mb-6 max-w-md">
-              We're a team of passionate developers and innovators dedicated to transforming businesses through cutting-edge technology and creative solutions.
+            <p className="text-gray-700 text-base leading-relaxed mb-6 max-w-md">
+              We're a team of passionate developers and innovators dedicated to
+              transforming businesses through cutting-edge technology and
+              creative solutions.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               {[
                 { icon: Facebook, href: "#" },
                 { icon: Twitter, href: "#" },
@@ -35,8 +51,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold text-black mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold text-black mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-2">
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
@@ -46,7 +64,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.path}
-                    className="text-gray-600 hover:text-red-400 transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-gray-600 hover:text-red-400 transition-all duration-300 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -54,19 +72,39 @@ const Footer = () => {
               ))}
             </ul>
           </div>
- <div>
-            <h3 className="text-xl font-semibold text-black mb-6">Our Services</h3>
-            <ul className="space-y-3">
+
+          {/* Our Services */}
+          <div>
+            <h3 className="text-lg font-semibold text-black mb-4">
+              Our Services
+            </h3>
+            <ul className="space-y-2">
               {[
-                { name: "Marketing", path: "/" },
-                { name: "SEO", path: "/about" },
-                { name: "EMail", path: "/services" },
-                { name: "Whats's App Crm", path: "/contact" },
+                {
+                  name: "Website Design & Development",
+                  path: "/",
+                },
+                {
+                  name: "SEO (Search Engine Optimization)",
+                  path: "/about",
+                },
+                { name: "Social Media Marketing", path: "/services" },
+                { name: "Google & Ads", path: "/contact" },
+                { name: "Graphic Design & Branding", path: "/contact" },
+                {
+                  name: "Content Creation (Reels, Post, Videos)",
+                  path: "/contact",
+                },
+                { name: "E-commerce Solutions", path: "/contact" },
+                {
+                  name: "Business Email & Hosting Support",
+                  path: "/contact",
+                },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.path}
-                    className="text-gray-600 hover:text-red-400 transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-gray-600 hover:text-red-400 transition-all duration-300 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -74,29 +112,44 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold text-black mb-6">Contact Info</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center space-x-3 text-gray-600">
-                <MapPin className="h-5 w-5 text-black-400" />
-                <span>123 Tech Street, Digital City, TC 12345</span>
+            <h3 className="text-lg font-semibold text-black mb-4">
+              Contact Info
+            </h3>
+            <ul className="space-y-3">
+              <li className="flex items-start space-x-3 text-gray-600">
+                <MapPin className="h-5 w-5 text-gray-600 mt-1" />
+                <span>Indore, Madhya Pradesh, 452010</span>
               </li>
-              <li className="flex items-center space-x-3 text-gray-600">
-                <Phone className="h-5 w-5 text-black-400" />
-                <span>+1 (555) 123-4567</span>
+              <li className="flex items-start space-x-3 text-gray-600">
+                <Phone className="h-5 w-5 text-gray-600 mt-1" />
+                <span>
+                  <Link href="tel:+918871450895" className="hover:underline">
+                    +91-9981730291
+                  </Link>
+                </span>
               </li>
-              <li className="flex items-center space-x-3 text-gray-600">
-                <Mail className="h-5 w-5 text-black-400" />
-                <span>hello@techcraft.dev</span>
+              <li className="flex justify-start text-gray-600 gap-x-3">
+                <Mail className="h-5 w-5 text-gray-600 mt-1 shrink-0" />
+                <span className="whitespace-normal break-keep">
+                  <Link
+                    href="mailto:info@fullydigitalagency.online"
+                    className="hover:underline"
+                  >
+                    info@fullydigitalagency.online
+                  </Link>
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center">
-          <p className="text-gray-600">
-            © 2022 Fully digital agency. All rights reserved.
+        {/* Footer Bottom */}
+        <div className="border-t border-white/10 mt-12 pt-6 text-center">
+          <p className="text-gray-600 text-sm">
+            © 2022 Fully Digital Agency. All rights reserved.
           </p>
         </div>
       </div>
