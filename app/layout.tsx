@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description: "Ignite your startup’s growth with agile digital marketing, WhatsApp CRM, IVR calling & smart tech—designed for customer acquisition and scalable success",
   icons: {
     icon:'/favicon.svg'
+  },
+  verification:{
+    google:'wp1f7jDsujfI55P2rzQO4d3GKkDeWDykqQ8fwbBuB2M'
   }
 };
 
