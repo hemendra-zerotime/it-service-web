@@ -20,7 +20,7 @@ className="bg-clip-text md:max-w-6xl text-transparent bg-gradient-to-b from-neut
       </p></BoxReveal>
       <BoxReveal boxColor='transparent' duration={0.5}> <Link href={'/contact'}><ShimmerButton className="shadow-2xl">
       <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-        Get Started
+        Take the First Step
       </span>
     </ShimmerButton></Link></BoxReveal>
     </BackgroundLines>

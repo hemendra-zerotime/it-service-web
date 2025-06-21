@@ -73,7 +73,9 @@ export default function Home() {
       <main className="space-y-16 scroll-smooth">
         <HeroSection />
         <Features />
-        <AnimatedTestimonialsDemo/>
+        <div className='max-sm:px-8 max-sm:py-4'>
+        <AnimatedTestimonialsDemo />
+        </div>
       </main>
     </>
   );
