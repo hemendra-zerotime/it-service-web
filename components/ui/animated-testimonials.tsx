@@ -2,6 +2,7 @@
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 
@@ -10,6 +11,7 @@ type Testimonial = {
   name: string;
   designation: string;
   src: string;
+  rating:number;
 };
 export const AnimatedTestimonials = ({
   testimonials,
@@ -31,6 +33,19 @@ export const AnimatedTestimonials = ({
   const isActive = (index: number) => {
     return index === active;
   };
+const renderStars = (rating: number) => {
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push(<FaStar key={i} className="text-yellow-400" />);
+    } else {
+      stars.push(<FaRegStar key={i} className="text-gray-300 dark:text-gray-600" />);
+    }
+  }
+
+  return <div className="flex items-center gap-1 mt-2">{stars}</div>;
+};
 
   useEffect(() => {
     if (autoplay) {
@@ -43,11 +58,21 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+    <>
+     <h2 className="text-black text-2xl md:text-4xl font-bold mb-2 text-center">
+        What Our Clients Say
+      </h2>
+      <div className="flex justify-center items-center">
+        <p className="text-gray-900 max-w-5xl text-1xl">
+         Because great work deserves great testimonials.
+        </p>
+      </div>
+   
+    <div className="mx-auto max-w-sm px-4 pt-10 pb-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+      <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2">
         <div>
-          <div className="relative h-80 w-full">
-            <AnimatePresence>
+          <div className="relative h-80 w-80">
+            <AnimatePresence> 
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.src}
@@ -77,7 +102,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom"
+                  className="absolute inset-0 origin-bottom flex justify-center"
                 >
                   <img
                     src={testimonial.src}
@@ -118,6 +143,7 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-gray-500 dark:text-neutral-500">
               {testimonials[active].designation}
             </p>
+            {renderStars(testimonials[active].rating)}
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
@@ -161,5 +187,6 @@ export const AnimatedTestimonials = ({
         </div>
       </div>
     </div>
+     </>
   );
 };

@@ -2,6 +2,9 @@ import SEO from '@/components/SEO'
 import HeroSection from "@/components/HeroSection";
 import Features from "@/components/Features";
 import { AnimatedTestimonialsDemo } from '@/components/Testimonials';
+import { ThreeDMarqueeDemo } from '@/components/Marquee';
+import Subscribers from '@/components/Subscribers';
+import GetStart from '@/components/GetStart';
 
 export const metadata = {
   title: 'Fully Digital Agency – Web Development, SEO, CRM Services',
@@ -73,9 +76,12 @@ export default function Home() {
       <main className="space-y-16 scroll-smooth">
         <HeroSection />
         <Features />
+        <Subscribers/>
+        <ThreeDMarqueeDemo/>
         <div className='max-sm:px-8 max-sm:py-4'>
         <AnimatedTestimonialsDemo />
         </div>
+        <GetStart/>
       </main>
     </>
   );
