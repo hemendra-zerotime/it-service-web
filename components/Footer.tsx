@@ -75,7 +75,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-1" />
-                <Link href="tel:+15551234567">+1 (555) 123-4567</Link>
+                <Link href="tel:+15551234567">+91 88714 50895</Link>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-1" />
@@ -88,7 +88,7 @@ const Footer = () => {
         {/* Second Row - Copyright */}
        <div className="border-t border-white/10 pt-6 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()}{" "}
+            © 2021{" "}
             <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-semibold">
               Fully Digital Agency
             </span>
