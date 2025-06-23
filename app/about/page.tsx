@@ -17,21 +17,12 @@ export default function AboutPage() {
       <div className="grid sm:grid-cols-2 gap-6">
         <Card>
           <CardContent className="p-4">
-            <h3 className="text-xl font-semibold">Suren Verma</h3>
-            <p className="text-sm text-gray-600">Founder & Lead Developer</p>
-            <p className="mt-2 text-gray-600">
-              Suren is a MERN stack expert with a passion for crafting modern web apps, solving real business challenges, and building user-first experiences.
-            </p>
+           
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <h3 className="text-xl font-semibold">Our Values</h3>
-            <ul className="list-disc pl-5 text-gray-600">
-              <li>Innovation: Always adopting new tech</li>
-              <li>Transparency: Open communication</li>
-              <li>Client-Centric: Your success is our mission</li>
-            </ul>
+           
           </CardContent>
         </Card>
       </div>
