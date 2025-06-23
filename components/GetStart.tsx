@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import { ShimmerButton } from "./magicui/shimmer-button";
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import {  IconArrowRight } from "@tabler/icons-react";
 
 const GetStart = () => {
 

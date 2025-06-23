@@ -18,7 +18,7 @@ className="bg-clip-text md:max-w-6xl text-transparent bg-gradient-to-b from-neut
 <BoxReveal boxColor='transparent' duration={0.5}><p className="max-w-4xl text-sm md:text-lg text-neutral-700 dark:text-neutral-400 mb-4">
         We build high-performance websites, design scroll-stopping social media posts, and create content that ranks. From SEO and WhatsApp CRM to IVR and marketing automation — everything we do is tailored to grow your visibility, engagement, and sales.
       </p></BoxReveal>
-      <BoxReveal boxColor='transparent' duration={0.5}> <Link href={'/contact'}><ShimmerButton className="shadow-2xl">
+      <BoxReveal boxColor='transparent' duration={0.5}> <Link href={'/contact'}><ShimmerButton>
       <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
         Take the First Step
       </span>
