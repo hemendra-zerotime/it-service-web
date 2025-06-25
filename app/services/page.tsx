@@ -79,38 +79,44 @@ export default function ServicesPage() {
 
         {/* Section 2 */}
         <section
-          className="relative bg-cover bg-center bg-no-repeat pt-24 sm:pt-32 md:pt-40 lg:pt-48 xl:pt-56 pb-24 sm:pb-32 md:pb-40 lg:pb-48 xl:pb-56"
+          className="relative bg-cover bg-center bg-no-repeat md:py-14 xl:py-20"
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/dnhtqoroy/image/upload/v1750848958/nextjs-gallery/utdafvo1r7b3kmcgkm1a.jpg')",
           }}
         >
           {/* Blur Overlay */}
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-xs z-0" />
 
           {/* Text Content */}
-          <div className="relative z-10 max-w-[90vw] lg:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-10">
-            <div className="md:w-1/2">
-              <p className="text-bpc text-xs sm:text-sm lg:text-base font-semibold uppercase md:mb-2">
-                Discover the Art
-              </p>
-              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:mb-4 min-h-[96px]">
-                <Typewriter
-                  words={[
-                    "Empowering Brands With Impactful & Intelligent Digital Campaigns.",
-                    "We Help You Grow Online Through Strategic Digital Execution.",
-                  ]}
-                  loop={0}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={40}
-                  deleteSpeed={20}
-                  delaySpeed={2000}
-                />
-              </h2>
-            </div>
-            <div className="md:w-1/2">
-              <p className="text-gray-700 p-4 bg-white rounded-3xl text-sm sm:text-base md:text-[17px] lg:text-lg xl:text-xl">
+       <div className="relative w-full h-auto min-h-[300px]">
+  {/* Absolute Text Content */}
+  <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-full max-w-[90vw] lg:max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-6 sm:gap-10">
+    
+    {/* Heading */}
+    <div className="md:w-1/2">
+      <p className="text-bpc text-xs sm:text-sm lg:text-base font-semibold uppercase mb-2">
+        Discover the Art
+      </p>
+      <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-snug md:mb-4 min-h-[96px]">
+        <Typewriter
+          words={[
+            "Empowering Brands With Impactful & Intelligent Digital Campaigns.",
+            "Transforming Your Vision Into Digital Success Stories.",
+          ]}
+          loop={0}
+          cursor
+          cursorStyle="|"
+          typeSpeed={40}
+          deleteSpeed={20}
+          delaySpeed={5000}
+        />
+      </h2>
+    </div>
+
+    {/* Paragraph */}
+    <div className="md:w-1/2">
+      <p className="text-gray-700 p-4 bg-white rounded-3xl text-sm sm:text-base md:text-[17px] lg:text-lg xl:text-xl">
           <Typewriter
             words={[
               "We help businesses grow online through strategic marketing, compelling content, and innovative technology. From increasing visibility to generating leads, we build your brand’s digital future.",
@@ -118,13 +124,16 @@ export default function ServicesPage() {
             loop={0}
             cursor
             cursorStyle=""
-            typeSpeed={50}
-            deleteSpeed={20}
-            delaySpeed={1000}
+            typeSpeed={20}
+            deleteSpeed={10}
+            delaySpeed={5000}
           />
         </p>
-            </div>
-          </div>
+    </div>
+
+  </div>
+</div>
+   
 
           {/* Reusable Cards Row */}
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 mt-10 md:mt-0">
