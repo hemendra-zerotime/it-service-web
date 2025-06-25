@@ -90,7 +90,7 @@ export const metadata:Metadata = {
     shortcut: '/favicon.svg',
   },
    verification:{
-    google:'wp1f7jDsujfI55P2rzQO4d3GKkDeWDykqQ8fwbBuB2M'
+    google:'cYbTHQCUCjTPIPG6g-K1jzAxMaVqUImN96_9vMS'
   }
 };
 
