@@ -1,9 +1,66 @@
-import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Metadata } from "next";
+export const metadata:Metadata = {
+  title: 'Contact Us | Fully Digital Agency – Web Design, SEO & Marketing Experts',
+  description:
+    'Need a stunning website, SEO strategy, or marketing help? Contact Fully Digital Agency for expert support, fast response, and personalized consultation from our Indore-based team.',
+  keywords: [
+    'contact digital agency',
+    'contact Fully Digital Agency',
+    'web design company Indore',
+    'seo agency India contact',
+    'website quote request',
+    'talk to marketing expert',
+    'web development support India',
+    'call digital agency',
+    'Fully Digital Agency contact info',
+  ],
+  openGraph: {
+    title: 'Contact Fully Digital Agency – Start Your Project or Ask a Question',
+    description:
+      'Get in touch with our expert team for web development, SEO, CRM integration, and digital marketing. Fully Digital Agency is ready to help you grow.',
+    url: 'https://fullydigitalagency.online/contact',
+    siteName: 'Fully Digital Agency',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: 'https://fullydigitalagency.online/banner.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Fully Digital Agency',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Fully Digital Agency – Expert Support & Fast Replies',
+    description:
+      'Reach out to discuss your project or get support. We offer expert digital solutions including SEO, web development, and CRM.',
+    images: ['https://fullydigitalagency.online/banner.jpg'],
+  },
+  alternates: {
+    canonical: 'https://fullydigitalagency.online/contact',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-snippet": -1,
+      "max-image-preview": 'large',
+      "max-video-preview": -1,
+    },
+  },
+};
+
 type FormFieldProps = {
   id: string;
   name: string;
@@ -29,11 +86,6 @@ const FormField = ({ id, name, type = "text", placeholder, label, required }: Fo
 export default function ContactPage() {
   return (
     <>
-      <SEO
-        title="Contact Us | Start Your Project"
-        description="Get in touch with our expert MERN developers. We’re here to help launch your next project."
-      />
-
       <main className="px-4 md:px-10 lg:px-20 py-12 mx-auto max-w-7xl">
         <section className="text-center mb-12 space-y-2">
           <h1 className="text-4xl font-bold">Contact&nbsp;<span className="text-bpc">Us</span> 
@@ -126,7 +178,7 @@ export default function ContactPage() {
           type="submit"
           className="w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white"
         >
-          Send Message ✈️
+          Send Message
         </Button>
       </form>
     </div>

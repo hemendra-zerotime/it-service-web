@@ -1,4 +1,3 @@
-import SEO from '@/components/SEO'
 import HeroSection from "@/components/HeroSection";
 import Features from "@/components/Features";
 import { AnimatedTestimonialsDemo } from '@/components/Testimonials';
