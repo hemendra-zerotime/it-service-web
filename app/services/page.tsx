@@ -1,81 +1,170 @@
+
+"use client"
 import SEO from "@/components/SEO";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import React from "react";
+import ClientMediaGallery from "@/components/ClientMediaGallery";
+import { BarChart3, Lightbulb, LineChart, SearchCheck } from "lucide-react";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
-const services = [
+import { Typewriter } from "react-simple-typewriter";
+
+// 🔁 Card Data
+const serviceCards = [
   {
-    title: "Full Stack Web Development",
-    desc: "End-to-end web development using the powerful MERN stack. From database architecture to pixel-perfect frontends — we do it all.",
-    img: "https://cdn-icons-png.flaticon.com/512/2972/2972176.png"
+    title: "SEO Optimization",
+    description:
+      "Boost your search visibility and rank higher on Google with proven white-hat SEO techniques.",
+    icon: SearchCheck,
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    alt: "SEO Mastery",
   },
   {
-    title: "Website Redesign & Modernization",
-    desc: "Already have a website? We’ll give it a performance, design, and SEO boost with modern frameworks and responsive layout.",
-    img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+    title: "Growth Marketing",
+    description:
+      "Engage, convert, and retain customers with data-driven campaigns tailored to your audience.",
+    icon: BarChart3,
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    alt: "Marketing Strategy",
   },
-  {
-    title: "Landing Pages & Business Sites",
-    desc: "Fast, high-converting, responsive websites tailored for your product or service — built for speed and conversions.",
-    img: "https://cdn-icons-png.flaticon.com/512/2421/2421131.png"
-  },
-  {
-    title: "Performance & SEO Optimization",
-    desc: "Speed matters. We’ll optimize your website for fast load times and better search engine visibility.",
-    img: "https://cdn-icons-png.flaticon.com/512/2201/2201570.png"
-  },
-  {
-    title: "API Integration & Backend Development",
-    desc: "Need to connect to third-party tools or create robust APIs? We design scalable backend systems with clean, secure code.",
-    img: "https://cdn-icons-png.flaticon.com/512/3306/3306617.png"
-  }
 ];
+
 export default function ServicesPage() {
   return (
     <>
       <SEO
-        title="Our Services | Web & App Development"
-        description="Explore our MERN stack web development, responsive design, API integration, and SEO optimization services."
+        title="Our Services | Digital Marketing & Web Solutions"
+        description="Explore our range of digital services from web design to SEO, social media marketing, and more."
       />
-      <main className="p-6 mx-auto">
-   <section id="services" className="space-y-8">
-      <h2 className="text-2xl font-bold text-center">Our Services</h2>
-      <div className="grid md:grid-cols-3 gap-6">
-        {services.map((service, i) => (
-          <Card key={i}>
-            <CardContent className="p-4 space-y-2">
-              <Image src={service.img} alt={service.title} width={64} height={64} className="mx-auto" />
-              <h3 className="font-semibold text-xl text-center">{service.title}</h3>
-              <p className="text-gray-600 text-center">{service.desc}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
-     </main>
-   </>
+      <main className="mb-30">
+        {/* Section 1 */}
+        <section className="px-6 sm:px-8 md:px-12 lg:px-20 xl:px-24 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-xl mx-auto w-full">
+            <ClientMediaGallery />
+          </div>
+          <div className="space-y-6 max-w-xl mx-auto w-full">
+            <p className="text-sm text-orange-600 font-semibold uppercase border-l-4 border-orange-500 pl-2">
+              Expertise in Action
+            </p>
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Accelerate Your Business Growth With Proven Digital Strategies.
+            </h1>
+            <p className="text-gray-600">
+              Our expert team helps you stand out online, attract quality leads,
+              and turn visitors into customers using data-driven marketing campaigns.
+            </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <Lightbulb className="text-orange-500 w-6 h-6 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg">Data-Driven Planning</h4>
+                  <p className="text-gray-500 text-sm">
+                    We craft long-term digital strategies tailored to your unique business goals.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <LineChart className="text-orange-500 w-6 h-6 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-lg">High-Performance Execution</h4>
+                  <p className="text-gray-500 text-sm">
+                    From SEO to paid ads, we implement campaigns focused on delivering measurable ROI.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2 */}
+        <section
+          className="relative bg-cover bg-center bg-no-repeat pt-24 sm:pt-32 md:pt-40 lg:pt-48 xl:pt-56 pb-24 sm:pb-32 md:pb-40 lg:pb-48 xl:pb-56"
+          style={{
+            backgroundImage:
+              "url('https://res.cloudinary.com/dnhtqoroy/image/upload/v1750848958/nextjs-gallery/utdafvo1r7b3kmcgkm1a.jpg')",
+          }}
+        >
+          {/* Blur Overlay */}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
+
+          {/* Text Content */}
+          <div className="relative z-10 max-w-[90vw] lg:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-10">
+            <div className="md:w-1/2">
+              <p className="text-orange-400 text-xs sm:text-sm lg:text-base font-semibold uppercase md:mb-2">
+                Discover the Art
+              </p>
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:mb-4 min-h-[96px]">
+                <Typewriter
+                  words={[
+                    "Empowering Brands With Impactful & Intelligent Digital Campaigns.",
+                    "We Help You Grow Online Through Strategic Digital Execution.",
+                  ]}
+                  loop={0}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={40}
+                  deleteSpeed={20}
+                  delaySpeed={2000}
+                />
+              </h2>
+            </div>
+            <div className="md:w-1/2">
+              <p className="text-gray-700 p-4 bg-white rounded-3xl text-sm sm:text-base md:text-[17px] lg:text-lg xl:text-xl">
+          <Typewriter
+            words={[
+              "We help businesses grow online through strategic marketing, compelling content, and innovative technology. From increasing visibility to generating leads, we build your brand’s digital future.",
+            ]}
+            loop={0}
+            cursor
+            cursorStyle=""
+            typeSpeed={50}
+            deleteSpeed={20}
+            delaySpeed={1000}
+          />
+        </p>
+            </div>
+          </div>
+
+          {/* Reusable Cards Row */}
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 mt-10 md:mt-0">
+            <div
+              className="relative z-10 flex flex-col md:flex-row gap-6 items-center justify-center
+                        md:absolute md:bottom-[-90px] md:left-1/2 md:transform md:-translate-x-1/2 w-full md:px-8"
+            >
+              {serviceCards.map((card, index) => {
+                const Icon = card.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col sm:flex-row w-full md:w-[36rem] h-auto md:h-[12rem] rounded-xl shadow-lg overflow-hidden bg-background-bpc"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full sm:w-1/2 h-[12rem]">
+                      <Image
+                        src={card.image}
+                        alt={card.alt}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    {/* Text */}
+                    <div className="w-full sm:w-1/2 text-white p-4 flex flex-col justify-center">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon className="w-5 h-5 text-black" />
+                        <h3 className="text-sm sm:text-base md:text-lg font-semibold">
+                          {card.title}
+                        </h3>
+                      </div>
+                      <p className="text-xs sm:text-sm md:text-[15px]">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
-
-
-
-
-// export default function Services() {
-//   return (
-//     <section id="services" className="space-y-8">
-//       <h2 className="text-2xl font-bold text-center">Our Services</h2>
-//       <div className="grid md:grid-cols-3 gap-6">
-//         {services.map((service, i) => (
-//           <Card key={i}>
-//             <CardContent className="p-4 space-y-2">
-//               <Image src={service.img} alt={service.title} width={64} height={64} className="mx-auto" />
-//               <h3 className="font-semibold text-xl text-center">{service.title}</h3>
-//               <p className="text-gray-600 text-center">{service.desc}</p>
-//             </CardContent>
-//           </Card>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }

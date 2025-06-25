@@ -36,8 +36,7 @@ export default function ContactPage() {
 
       <main className="px-4 md:px-10 lg:px-20 py-12 mx-auto max-w-7xl">
         <section className="text-center mb-12 space-y-2">
-          <h1 className="text-4xl font-bold">Get in
-             <span className="text-red-600">Touch</span> 
+          <h1 className="text-4xl font-bold">Contact&nbsp;<span className="text-red-600">Us</span> 
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We’d love to hear from you. Whether you have a project in mind, need technical consultation, or just want to say hello, don’t hesitate to reach out. Our team is here to help you succeed.
