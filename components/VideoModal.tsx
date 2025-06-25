@@ -19,16 +19,16 @@ export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClo
         >
           <X className="w-6 h-6" />
         </button>
-        <video
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
-          controls
-          autoPlay
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover rounded-2xl"
-        >
-          Your browser does not support the video tag.
-        </video>
+       <iframe
+  width="100%"
+  height="100%"
+  src="https://www.youtube.com/embed/JgDNFQ2RaLQ?autoplay=1&mute=1&playsinline=1"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+  className="w-full h-full rounded-2xl"
+/>
       </div>
     </div>
   );

@@ -1,6 +1,15 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram,  } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { SiThreads ,SiX} from 'react-icons/si';
+const socialLinks = [
+  { Icon: Facebook, url: 'https://facebook.com/fullydigitalagency' },
+  { Icon: SiX, url: 'https://twitter.com/fullydigitalagency' },
+  { Icon: Linkedin, url: 'https://www.linkedin.com/company/fully-digital-agency/' },
+  { Icon: Instagram, url: 'https://instagram.com/fullydigitalagency' },
+  { Icon: SiThreads, url: 'https://www.threads.net/fullydigitalagency' },
+
+];
 
 const Footer = () => {
   return (
@@ -19,11 +28,17 @@ const Footer = () => {
               We're a team of passionate developers and marketers helping businesses grow through smart technology and digital innovation.
             </p>
             <div className="flex space-x-4 mt-4">
-              {[Facebook, Twitter, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="p-2 rounded-full bg-black hover:bg-red-500 transition-all">
-                  <Icon className="h-4 w-4 text-white" />
-                </a>
-              ))}
+              {socialLinks.map(({ Icon, url }, i) => (
+                 <a
+      key={i}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-2 rounded-full bg-black hover:bg-red-500 transition-all"
+    >
+      <Icon className="h-4 w-4 text-white" />
+    </a>
+  ))}
             </div>
           </div>
 
@@ -89,7 +104,7 @@ const Footer = () => {
        <div className="border-t border-white/10 pt-6 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
             © 2021{" "}
-            <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent font-semibold">
+            <span className="bg-gradient-to-r from-bpc via-red-600 to-bpc bg-clip-text text-transparent font-semibold">
               Fully Digital Agency
             </span>
             . All rights reserved.
