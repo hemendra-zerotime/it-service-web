@@ -39,7 +39,7 @@ export default function ClientMediaGallery() {
             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 rounded-xl"
           />
           <button className="absolute inset-0 m-auto flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full shadow-md transition-transform duration-300 group-hover:scale-110">
-            <Play className="text-red-600 w-8 h-8" />
+            <Play className="text-bpc w-8 h-8" />
           </button>
         </div>
       </div>

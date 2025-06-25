@@ -36,7 +36,7 @@ export default function ContactPage() {
 
       <main className="px-4 md:px-10 lg:px-20 py-12 mx-auto max-w-7xl">
         <section className="text-center mb-12 space-y-2">
-          <h1 className="text-4xl font-bold">Contact&nbsp;<span className="text-red-600">Us</span> 
+          <h1 className="text-4xl font-bold">Contact&nbsp;<span className="text-bpc">Us</span> 
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We’d love to hear from you. Whether you have a project in mind, need technical consultation, or just want to say hello, don’t hesitate to reach out. Our team is here to help you succeed.
@@ -100,7 +100,7 @@ export default function ContactPage() {
 
     {/* Right Form */}
     <div className="bg-white bg-opacity-10 rounded-xl p-4 sm:p-6 backdrop-blur-sm w-full">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-red-500 text-center">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-bpc text-center">
   Send us a Message
 </h2>
       <form className="space-y-4 text-gray-600">

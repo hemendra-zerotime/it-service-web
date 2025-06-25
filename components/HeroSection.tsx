@@ -10,9 +10,9 @@ export default function HeroSection() {
      <BackgroundLines className="flex justify-center w-full flex-col items-center text-center md:px-15">
 <BoxReveal boxColor='transparent' duration={0.5}><h2 
 className="bg-clip-text md:max-w-6xl text-transparent bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
-       <span className="text-red-600">Crafting </span>
+       <span className="text-bpc">Crafting </span>
   <span className="text-black">Websites, Content & Campaigns </span>
-  <span className="text-red-600">That Deliver Growth</span>
+  <span className="text-bpc">That Deliver Growth</span>
       </h2></BoxReveal>
 
 <BoxReveal boxColor='transparent' duration={0.5}><p className="max-w-4xl text-sm md:text-lg text-neutral-700 dark:text-neutral-400 mb-4">

@@ -38,7 +38,7 @@ const Footer = () => {
                 { name: "Contact", path: "/contact" },
               ].map(link => (
                 <li key={link.name}>
-                  <Link href={link.path} className="hover:text-red-500 transition">
+                  <Link href={link.path} className="hover:text-bpc transition">
                     {link.name}
                   </Link>
                 </li>

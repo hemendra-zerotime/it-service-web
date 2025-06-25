@@ -42,7 +42,7 @@ export default function ServicesPage() {
             <ClientMediaGallery />
           </div>
           <div className="space-y-6 max-w-xl mx-auto w-full">
-            <p className="text-sm text-orange-600 font-semibold uppercase border-l-4 border-orange-500 pl-2">
+            <p className="text-sm text-bpc font-semibold uppercase border-l-4 border-bpc pl-2">
               Expertise in Action
             </p>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -54,7 +54,8 @@ export default function ServicesPage() {
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <Lightbulb className="text-orange-500 w-6 h-6 mt-1" />
+                <Lightbulb className="text-bpc
+                 w-6 h-6 mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg">Data-Driven Planning</h4>
                   <p className="text-gray-500 text-sm">
@@ -63,7 +64,8 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <LineChart className="text-orange-500 w-6 h-6 mt-1" />
+                <LineChart className="text-bpc
+                 w-6 h-6 mt-1" />
                 <div>
                   <h4 className="font-semibold text-lg">High-Performance Execution</h4>
                   <p className="text-gray-500 text-sm">
@@ -89,7 +91,7 @@ export default function ServicesPage() {
           {/* Text Content */}
           <div className="relative z-10 max-w-[90vw] lg:max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-10">
             <div className="md:w-1/2">
-              <p className="text-orange-400 text-xs sm:text-sm lg:text-base font-semibold uppercase md:mb-2">
+              <p className="text-bpc text-xs sm:text-sm lg:text-base font-semibold uppercase md:mb-2">
                 Discover the Art
               </p>
               <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:mb-4 min-h-[96px]">
