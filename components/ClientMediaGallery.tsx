@@ -32,7 +32,7 @@ export default function ClientMediaGallery() {
           onClick={() => setIsOpen(true)}
         >
           <Image
-            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+            src="https://res.cloudinary.com/dnhtqoroy/image/upload/v1751133372/nextjs-gallery/t4ps6o2m2iktxvhhzl5q.jpg"
             alt="Video Preview"
             width={600}
             height={400}

@@ -19,16 +19,17 @@ export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClo
         >
           <X className="w-6 h-6" />
         </button>
-       <iframe
+      <iframe
   width="100%"
   height="100%"
-  src="https://www.youtube.com/embed/JgDNFQ2RaLQ?autoplay=1&mute=1&playsinline=1"
+  src="https://www.youtube.com/embed/ZwNLjEag8zw?autoplay=1&mute=1"
   title="YouTube video player"
   frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+   allow="autoplay; encrypted-media"
   allowFullScreen
   className="w-full h-full rounded-2xl"
 />
+
       </div>
     </div>
   );

@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         port: '', // leave empty unless using a custom port
         pathname: '/**', // match all paths
       },
+      {
+      protocol: 'https',
+      hostname: 'res.cloudinary.com',
+      port: '',
+      pathname: '/dnhtqoroy/image/upload/**',
+    },
     ],
   },
 

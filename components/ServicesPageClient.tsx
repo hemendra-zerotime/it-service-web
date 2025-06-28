@@ -3,7 +3,9 @@
 import ClientMediaGallery from "@/components/ClientMediaGallery";
 import { BarChart3, Lightbulb, LineChart, SearchCheck } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import ServiceModal from "./ServiceModel";
 
 
 
@@ -28,8 +30,172 @@ const serviceCards = [
     alt: "Marketing Strategy",
   },
 ];
+export interface ServiceItem {
+  title: string;
+  icon: string;
+  description: string;
+  shortDescription:string;
+  image: string;
+  features?: string[];
+  benefits?: string[];
+}
 
 export default function ServicesPageClient() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [modalService, setModalService] = useState<ServiceItem | null>(null);
+const sharedImage = "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80";
+
+const services: ServiceItem[] = [
+  {
+    title: "Website Design & Development",
+    icon: "💻",
+    description:
+      "Your website is your business's first impression. We design and develop custom websites that are visually appealing, mobile-responsive, SEO-friendly, and optimized to convert visitors into customers.",
+    shortDescription: "Custom-designed, responsive websites built to grow your brand and sales.",
+    image: sharedImage,
+    features: [
+      "Responsive UI/UX design",
+      "SEO-ready code structure",
+      "Fast and secure performance"
+    ],
+    benefits: [
+      "Better user engagement",
+      "Higher conversion rates",
+      "Stronger online presence"
+    ]
+  },
+  {
+    title: "Search Engine Optimization (SEO)",
+    icon: "🏆",
+    description:
+      "Struggling to get found on Google? Our SEO service helps your website rank higher, reach the right audience, and drive consistent organic traffic. From keyword research to technical audits and quality backlinks, we optimize every aspect of your web presence.",
+    shortDescription: "Boost your site's visibility and drive organic traffic with powerful SEO strategies.",
+    image: sharedImage,
+    features: [
+      "Keyword research & optimization",
+      "Technical SEO audits",
+      "Backlink analysis & building"
+    ],
+    benefits: [
+      "Higher search engine rankings",
+      "Increased organic traffic",
+      "Improved brand credibility"
+    ]
+  },
+  {
+    title: "Social Media Marketing",
+    icon: "📱",
+    description:
+      "Social media is where your audience lives. We help you engage them with creative, consistent, and strategic content that builds your brand, fuels engagement, and drives real business growth across platforms.",
+    shortDescription: "Build awareness and customer loyalty through strategic social media engagement.",
+    image: sharedImage,
+    features: [
+      "Content scheduling & automation",
+      "Influencer collaboration",
+      "Performance analytics"
+    ],
+    benefits: [
+      "Boost brand awareness",
+      "Increase follower engagement",
+      "Generate social leads"
+    ]
+  },
+  {
+    title: "Google Ads & Pay-Per-Click (PPC)",
+    icon: "💰",
+    description:
+      "Want fast results? Our PPC experts create high-performing ad campaigns that reach your ideal customers and deliver conversions quickly—while keeping your budget optimized and your ROI strong.",
+    shortDescription: "Drive instant leads and conversions through data-backed ad strategies.",
+    image: sharedImage,
+    features: [
+      "Google Ads & Meta Ads",
+      "Conversion tracking",
+      "A/B testing for creatives"
+    ],
+    benefits: [
+      "Faster ROI",
+      "Precise audience targeting",
+      "Flexible budget control"
+    ]
+  },
+  {
+    title: "Graphic Design & Branding",
+    icon: "🎨",
+    description:
+      "Your brand deserves to stand out. Our graphic design and branding services ensure your visual identity is bold, consistent, and unforgettable—from logos and color palettes to marketing materials and brand guides.",
+    shortDescription: "Create a memorable brand identity with stunning design and cohesive branding.",
+    image: sharedImage,
+    features: [
+      "Logo & brand identity design",
+      "Marketing & promotional materials",
+      "Brand guidelines development"
+    ],
+    benefits: [
+      "Professional brand image",
+      "Stronger brand recognition",
+      "Improved trust & credibility"
+    ]
+  },
+  {
+    title: "Content Creation (Reels, Posts, Videos)",
+    icon: "🎥",
+    description:
+      "Content is king in the digital world. We create scroll-stopping reels, engaging posts, and captivating videos tailored for each platform to amplify your brand and connect with your audience.",
+    shortDescription: "High-impact content that gets your brand noticed and remembered.",
+    image: sharedImage,
+    features: [
+      "Reels and short-form video creation",
+      "Custom graphic posts & carousels",
+      "Branded storytelling content"
+    ],
+    benefits: [
+      "Improved engagement rates",
+      "Increased content reach",
+      "Stronger brand personality"
+    ]
+  },
+  {
+    title: "E-commerce Solutions",
+    icon: "🛒",
+    description:
+      "Sell smarter online with our end-to-end e-commerce solutions. From platform setup to payment integration and product management, we build scalable online stores designed to convert and grow.",
+    shortDescription: "Launch and scale your online store with robust e-commerce development.",
+    image: sharedImage,
+    features: [
+      "Shopify, WooCommerce, custom builds",
+      "Secure payment gateway integration",
+      "Inventory & order management"
+    ],
+    benefits: [
+      "Frictionless shopping experience",
+      "Increased online sales",
+      "Scalable online presence"
+    ]
+  },
+  {
+    title: "Business Email & Hosting Support",
+    icon: "📧",
+    description:
+      "Professional email and reliable hosting are the foundation of your digital operations. We offer secure business email setup and ongoing support, along with high-performance hosting solutions tailored to your needs.",
+    shortDescription: "Get reliable email and hosting solutions to keep your business running smoothly.",
+    image: sharedImage,
+    features: [
+      "Business email setup (Google Workspace, Zoho, etc.)",
+      "Secure, fast web hosting",
+      "Ongoing technical support"
+    ],
+    benefits: [
+      "Improved business communication",
+      "Reliable website uptime",
+      "Expert support when needed"
+    ]
+  }
+];
+
+
+
+
+
   return (
     <>
       <main className="mb-30">
@@ -130,7 +296,6 @@ export default function ServicesPageClient() {
 
   </div>
 </div>
-   
 
           {/* Reusable Cards Row */}
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 mt-10 md:mt-0">
@@ -171,6 +336,72 @@ export default function ServicesPageClient() {
               })}
             </div>
           </div>
+        </section>
+  <section className="py-24 md:pt-32 bg-white px-4 sm:px-8 md:px-12 lg:px-20 xl:px-24">
+          <div className="text-center max-w-7xl mx-auto mb-12">
+            <p className="uppercase text-sm text-bpc font-semibold tracking-widest">
+              Service We Offers
+            </p>
+           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mt-2">
+  Discover Our Full Spectrum of Professional Services That Empower Your Brand, Expand Your Reach, and Maximize Your Online Success.
+</h2>
+          </div>
+
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+            {services.map((service, idx) => {
+              const isActive = idx === activeIndex;
+              return (
+                <div
+                  key={idx}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`rounded-xl p-6 shadow-sm hover:shadow-md cursor-pointer group 
+                    transition-all duration-300 ease-in-out 
+                    ${isActive 
+                      ? "bg-gradient-to-br from-red-500 to-orange-600 text-white"
+                      : "bg-white text-gray-900 border border-gray-100 hover:bg-gradient-to-br hover:from-red-500 hover:to-orange-600 hover:text-white"
+                    }`}
+                >
+                  <div
+                    className={`mb-4 h-10 w-10 rounded-full flex items-center justify-center
+                      transition-colors duration-300 ease-in-out 
+                      ${isActive 
+                        ? "bg-white text-bpc"
+                        : "bg-red-100 text-bpc group-hover:bg-white group-hover:text-bpc"
+                      }`}
+                  >
+                    <span className="text-lg">{service.icon}</span>
+                  </div>
+
+                  <h4 className="text-lg font-semibold mb-2 transition-colors duration-300 ease-in-out">
+                    {service.title}
+                  </h4>
+
+                  <p
+                    className={`text-sm mb-4 transition-colors duration-300 ease-in-out 
+                      ${isActive ? "text-white/90" : "text-gray-500 group-hover:text-white/90"}`}
+                  >
+                    {service.shortDescription}
+                  </p>
+
+                  <span
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setModalService(service);
+                    }}
+                    className={`text-sm font-medium transition-colors duration-300 ease-in-out 
+                      ${isActive ? "text-white" : "text-bpc group-hover:text-white"}`}
+                  >
+                    LEARN MORE →
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Modal */}
+          {modalService && (
+            <ServiceModal service={modalService} onClose={() => setModalService(null)} />
+          )}
         </section>
       </main>
     </>
