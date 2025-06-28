@@ -95,7 +95,7 @@ export default function ServiceModal({ service, onClose }: Props) {
                     
                     className="w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white"
                   >
-                    Contact us now
+                    Contact us
                   </Button>
                   </Link>
         </div>
