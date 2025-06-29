@@ -21,7 +21,7 @@ export default function ServiceModal({ service, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/60 px-0 sm:px-4 py-0 sm:py-6 overflow-y-auto"
+      className="fixed inset-0 z-500 flex items-center justify-center backdrop-blur-md bg-black/60 px-0 sm:px-4 py-0 sm:py-6 overflow-y-auto"
       onClick={onClose}
     >
       <div
@@ -35,15 +35,15 @@ export default function ServiceModal({ service, onClose }: Props) {
           sm:w-full sm:h-auto 
           md:max-w-2xl lg:max-w-4xl
         `}
-        onClick={(e) => e.stopPropagation()} // prevent close on click inside
+        onClick={(e) => e.stopPropagation()} 
       >
         {/* Close Button */}
-        <button
+        <Button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 text-white bg-black/40 hover:bg-black/60 rounded-full p-2 backdrop-blur-md"
         >
           <X className="w-5 h-5" />
-        </button>
+        </Button>
 
         {/* Header Image */}
         <div className="relative h-48 sm:h-56 md:h-64 lg:h-80 w-full">

@@ -20,7 +20,7 @@ const serviceCards = [
       "Boost your search visibility and rank higher on Google with proven white-hat SEO techniques.",
     icon: SearchCheck,
     image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+      "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751206616/nextjs-gallery/p04xqinz523njjlik5rw.jpg",
     alt: "SEO Mastery",
   },
   {
@@ -29,7 +29,7 @@ const serviceCards = [
       "Engage, convert, and retain customers with data-driven campaigns tailored to your audience.",
     icon: BarChart3,
     image:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+      "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751224356/nextjs-gallery/tcl0elxcpfbpg0nyk9jv.jpg",
     alt: "Marketing Strategy",
   },
 ];
@@ -46,8 +46,6 @@ export interface ServiceItem {
 export default function ServicesPageClient() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [modalService, setModalService] = useState<ServiceItem | null>(null);
-  const sharedImage =
-    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80";
 
   const services: ServiceItem[] = [
     {
@@ -57,7 +55,7 @@ export default function ServicesPageClient() {
         "Your website is your business's first impression. We design and develop custom websites that are visually appealing, mobile-responsive, SEO-friendly, and optimized to convert visitors into customers.",
       shortDescription:
         "Custom-designed, responsive websites built to grow your brand and sales.",
-      image: sharedImage,
+      image:"https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228850/nextjs-gallery/orxyp8mbxuhre2lmh4ir.jpg",
       features: [
         "Responsive UI/UX design",
         "SEO-ready code structure",
@@ -76,7 +74,7 @@ export default function ServicesPageClient() {
         "Struggling to get found on Google? Our SEO service helps your website rank higher, reach the right audience, and drive consistent organic traffic. From keyword research to technical audits and quality backlinks, we optimize every aspect of your web presence.",
       shortDescription:
         "Boost your site's visibility and drive organic traffic with powerful SEO strategies.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751206616/nextjs-gallery/p04xqinz523njjlik5rw.jpg",
       features: [
         "Keyword research & optimization",
         "Technical SEO audits",
@@ -95,7 +93,7 @@ export default function ServicesPageClient() {
         "Social media is where your audience lives. We help you engage them with creative, consistent, and strategic content that builds your brand, fuels engagement, and drives real business growth across platforms.",
       shortDescription:
         "Build awareness and customer loyalty through strategic social media engagement.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227136/nextjs-gallery/oibihyrxtcswfu8yesr4.jpg",
       features: [
         "Content scheduling & automation",
         "Influencer collaboration",
@@ -114,7 +112,7 @@ export default function ServicesPageClient() {
         "Want fast results? Our PPC experts create high-performing ad campaigns that reach your ideal customers and deliver conversions quickly—while keeping your budget optimized and your ROI strong.",
       shortDescription:
         "Drive instant leads and conversions through data-backed ad strategies.",
-      image: sharedImage,
+      image:"https://res.cloudinary.com/dnhtqoroy/image/upload/v1751226568/nextjs-gallery/znphz1dhp2uexxypolwg.jpg",
       features: [
         "Google Ads & Meta Ads",
         "Conversion tracking",
@@ -133,7 +131,7 @@ export default function ServicesPageClient() {
         "Your brand deserves to stand out. Our graphic design and branding services ensure your visual identity is bold, consistent, and unforgettable—from logos and color palettes to marketing materials and brand guides.",
       shortDescription:
         "Create a memorable brand identity with stunning design and cohesive branding.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228338/nextjs-gallery/zydbphw94cvax9fgdrvn.jpg",
       features: [
         "Logo & brand identity design",
         "Marketing & promotional materials",
@@ -152,7 +150,7 @@ export default function ServicesPageClient() {
         "Content is king in the digital world. We create scroll-stopping reels, engaging posts, and captivating videos tailored for each platform to amplify your brand and connect with your audience.",
       shortDescription:
         "High-impact content that gets your brand noticed and remembered.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227963/nextjs-gallery/wtn668oe4iheycuym3h1.jpg",
       features: [
         "Reels and short-form video creation",
         "Custom graphic posts & carousels",
@@ -171,7 +169,7 @@ export default function ServicesPageClient() {
         "Sell smarter online with our end-to-end e-commerce solutions. From platform setup to payment integration and product management, we build scalable online stores designed to convert and grow.",
       shortDescription:
         "Launch and scale your online store with robust e-commerce development.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227515/nextjs-gallery/ylq0blyvwgeas7jukw3c.jpg",
       features: [
         "Shopify, WooCommerce, custom builds",
         "Secure payment gateway integration",
@@ -190,7 +188,7 @@ export default function ServicesPageClient() {
         "Professional email and reliable hosting are the foundation of your digital operations. We offer secure business email setup and ongoing support, along with high-performance hosting solutions tailored to your needs.",
       shortDescription:
         "Get reliable email and hosting solutions to keep your business running smoothly.",
-      image: sharedImage,
+      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751225893/nextjs-gallery/icx9q4r4t15lwskxmwww.jpg",
       features: [
         "Business email setup (Google Workspace, Zoho, etc.)",
         "Secure, fast web hosting",
@@ -353,7 +351,7 @@ const workSteps = [
                         src={card.image}
                         alt={card.alt}
                         fill
-                        className="object-cover"
+                        className="object-cover aspect-square"
                       />
                     </div>
                     {/* Text */}
@@ -467,11 +465,11 @@ const workSteps = [
     {/* Left Image */}
     <div className="w-full lg:w-[35%]">
       <Image
-        src={sharedImage}
+        src={`https://res.cloudinary.com/dnhtqoroy/image/upload/v1751230945/nextjs-gallery/fdapnup8yeqtlvgfc6ur.jpg`}
         alt="Meeting"
         width={500}
         height={700}
-        className="rounded-2xl w-full h-full object-cover"
+        className="rounded-2xl w-full h-full object-cover aspect-square"
       />
     </div>
 
