@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import Features from "@/components/Features";
-import { AnimatedTestimonialsDemo } from '@/components/Testimonials';
 import { ThreeDMarqueeDemo } from '@/components/Marquee';
 import Subscribers from '@/components/Subscribers';
 
@@ -76,10 +75,7 @@ export default function Home() {
         <HeroSection />
         <Features />
         <Subscribers/>
-        {/* <ThreeDMarqueeDemo/> */}
-        <div className='max-sm:px-8 max-sm:py-4'>
-        <AnimatedTestimonialsDemo />
-        </div>
+        <ThreeDMarqueeDemo/>
       </main>
     </>
   );

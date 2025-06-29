@@ -1,10 +1,15 @@
-// components/VideoModal.tsx
-'use client';
 
+'use client';
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+type VideoModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  videoUrl: string;
+};
+
+export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -19,17 +24,16 @@ export default function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClo
         >
           <X className="w-6 h-6" />
         </button>
-      <iframe
-  width="100%"
-  height="100%"
-  src="https://www.youtube.com/embed/ZwNLjEag8zw?autoplay=1&mute=1"
-  title="YouTube video player"
-  frameBorder="0"
-   allow="autoplay; encrypted-media"
-  allowFullScreen
-  className="w-full h-full rounded-2xl"
-/>
-
+        <iframe
+          width="100%"
+          height="100%"
+          src={`${videoUrl}?autoplay=1&mute=1`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className="w-full h-full rounded-2xl"
+        />
       </div>
     </div>
   );

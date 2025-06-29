@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Play } from "lucide-react";
 import VideoModal from "./VideoModal";
+import { Button } from "./ui/button";
 
 export default function ClientMediaGallery() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,12 +39,18 @@ export default function ClientMediaGallery() {
             height={400}
             className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105 rounded-xl"
           />
-          <button className="absolute inset-0 m-auto flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full shadow-md transition-transform duration-300 group-hover:scale-110">
+          <Button className="absolute inset-0 m-auto flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full shadow-md transition-transform duration-300 group-hover:scale-110">
             <Play className="text-bpc w-8 h-8" />
-          </button>
+          </Button>
         </div>
       </div>
-      {mounted && isOpen && <VideoModal isOpen={isOpen} onClose={() => setIsOpen(false)} />}
+      {mounted && isOpen && (
+              <VideoModal
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                videoUrl="https://www.youtube.com/embed/ZwNLjEag8zw"
+              />
+            )}
     </>
   );
 }
