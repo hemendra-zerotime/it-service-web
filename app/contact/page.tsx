@@ -87,13 +87,30 @@ export default function ContactPage() {
   return (
     <>
       <main className="px-4 md:px-10 lg:px-20 py-12 mx-auto max-w-7xl">
-        <section className="text-center mb-12 space-y-2">
-          <h1 className="text-4xl font-bold">Contact&nbsp;<span className="text-bpc">Us</span> 
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We’d love to hear from you. Whether you have a project in mind, need technical consultation, or just want to say hello, don’t hesitate to reach out. Our team is here to help you succeed.
-          </p>
-        </section>
+       <section className="text-center mb-20 space-y-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+  <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0B1B36] leading-tight">
+    Let’s Build Something <span className="text-bpc">Great Together</span>
+  </h1>
+  <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
+    Whether you’re launching a new idea, expanding your business, or exploring what’s possible — we’re here to help you thrive online. We provide personalized digital solutions to bring your vision to life.
+  </p>
+
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mt-10">
+    <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+      <h3 className="text-lg font-semibold text-bpc">Free Discovery Call</h3>
+      <p className="text-sm text-gray-600 mt-2">Let’s discuss your goals and define what success means for your business.</p>
+    </div>
+    <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+      <h3 className="text-lg font-semibold text-bpc">Proven Results</h3>
+      <p className="text-sm text-gray-600 mt-2">We’ve helped brands boost traffic, leads, and engagement with result-driven digital strategies.</p>
+    </div>
+    <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+      <h3 className="text-lg font-semibold text-bpc">Creative Collaboration</h3>
+      <p className="text-sm text-gray-600 mt-2">Work hand-in-hand with a friendly, experienced team that truly understands your vision.</p>
+    </div>
+  </div>
+</section>
+
 
         {/* Main Contact Grid */}
        <section
@@ -184,7 +201,66 @@ export default function ContactPage() {
     </div>
   </div>
 </section>
+<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+  <div className="space-y-6 text-center">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1B36]">
+      Strategically Based in Indore, Serving Clients Nationwide
+    </h2>
+    <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
+      While we operate remotely, we’re based in Indore — one of India’s most energetic and fast-growing tech hubs. Our digital-first culture allows us to work smarter and deliver exceptional value to clients across India and beyond.
+    </p>
+  </div>
 
+  <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="space-y-6 bg-white p-6 rounded-2xl shadow-lg">
+      <h3 className="text-xl sm:text-2xl font-semibold text-[#0B1B36]">
+        Let’s Start Something Impactful
+      </h3>
+      <p className="text-gray-600 text-base">
+        We collaborate with startups, small businesses, and growing brands to craft high-performance websites, SEO strategies, CRM integrations, and digital campaigns.
+      </p>
+
+      <ul className="text-gray-600 text-base space-y-4">
+        <li className="flex items-start gap-3">
+          <span className="bg-bpc/10 text-bpc p-2 rounded-full">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6"></path></svg>
+          </span>
+          <span>Free consultations with real experts</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="bg-bpc/10 text-bpc p-2 rounded-full">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3"></path><path strokeLinecap="round" strokeLinejoin="round" d="M21 12A9 9 0 113 12a9 9 0 0118 0z"></path></svg>
+          </span>
+          <span>Transparent timelines & pricing</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="bg-bpc/10 text-bpc p-2 rounded-full">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 20H4v-2a3 3 0 015.356-1.857M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </span>
+          <span>Long-term support & growth-focused approach</span>
+        </li>
+      </ul>
+
+      <p className="text-gray-600 text-base">
+        Ready to take the next step? Let’s turn your ideas into results.
+      </p>
+    </div>
+
+    <div className="w-full rounded-2xl overflow-hidden shadow-xl aspect-[3/1.4] border-4 border-white">
+      <iframe
+        title="Fully Digital Agency Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.925316770967!2d75.85772587480298!3d22.991210918021434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fdc4a7dbce77%3A0xc0a9b8c72c0e05f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1719663600000!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-full h-full"
+      ></iframe>
+    </div>
+  </div>
+</section>
       </main>
     </>
   );

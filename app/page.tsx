@@ -75,7 +75,9 @@ export default function Home() {
         <HeroSection />
         <Features />
         <Subscribers/>
-        <ThreeDMarqueeDemo/>
+      
+  <ThreeDMarqueeDemo />
+
       </main>
     </>
   );

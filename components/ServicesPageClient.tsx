@@ -226,7 +226,7 @@ const workSteps = [
 
   return (
     <>
-      <main className="">
+      <main>
         {/* Section 1 */}
         <section className="px-6 sm:px-8 md:px-12 lg:px-20 xl:px-24 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="max-w-xl mx-auto w-full">
@@ -454,7 +454,7 @@ const workSteps = [
             />
           )}
         </section>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   <div className="flex items-center justify-center gap-3 mb-4">
     <div className="w-10 h-[2px] bg-bpc rounded-full"></div>
     <p className="text-bpc text-center text-sm font-semibold uppercase tracking-wide">
