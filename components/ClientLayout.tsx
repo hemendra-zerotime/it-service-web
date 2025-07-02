@@ -17,11 +17,12 @@ export default function ClientLayout({
       <ScrollProgress className="top-0 z-[999]" />
       {children}
       <FloatingWhatsApp />
-    <div className="px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
-  <AnimatedTestimonialsDemo />
-</div>
-
-      <div className="mt-15"><GetStart/></div>
+      <div className="px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 lg:py-12">
+        <AnimatedTestimonialsDemo />
+      </div>
+      <div className="mt-15">
+        <GetStart />
+      </div>
       <Footer />
     </>
   );

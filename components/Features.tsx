@@ -76,7 +76,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="p-8 bg-gradient-to-r from-gray-300 to-gray-400 text-center">
+    <section className="p-8 bg-gradient-to-r from-gray-300 to-gray-200 text-center">
       <h2 className="text-black text-2xl md:text-4xl font-bold mb-2">
         Why Choose Our Services?
       </h2>
