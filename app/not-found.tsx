@@ -33,8 +33,8 @@ export default function NotFound() {
         </h1>
 
         <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-8">
-          The page you’re looking for doesn’t exist — or maybe it's still under creative construction. 
-          Let’s get you back on track.
+          The page you’re looking for doesn’t exist — or maybe it's still under
+          creative construction. Let’s get you back on track.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
@@ -45,12 +45,9 @@ export default function NotFound() {
           </Link>
 
           <Link href="/contact" passHref>
-          <Button
-  className="bg-black text-white hover:bg-black/70 px-6 py-2 text-base font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black"
->
-  Start a Project →
-</Button>
-
+            <Button className="bg-black text-white hover:bg-black/70 px-6 py-2 text-base font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black">
+              Start a Project →
+            </Button>
           </Link>
         </div>
       </section>

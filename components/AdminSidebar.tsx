@@ -18,16 +18,35 @@ type SidebarProps = {
 
 const navLinks = [
   { name: "Home", href: "/admin", icon: <Home className="w-5 h-5" /> },
-  { name: "Enquiries", href: "/admin/enquiries", icon: <ClipboardList className="w-5 h-5" /> },
+  {
+    name: "Enquiries",
+    href: "/admin/enquiries",
+    icon: <ClipboardList className="w-5 h-5" />,
+  },
 ];
 
 const contentLinks = [
-  { name: "Pages", href: "/admin/content/pages", icon: <Layout className="w-5 h-5" /> },
-  { name: "Blog Posts", href: "/admin/content/blog", icon: <FileText className="w-5 h-5" /> },
-  { name: "Testimonials", href: "/admin/content/testimonials", icon: <MessageSquare className="w-5 h-5" /> },
+  {
+    name: "Pages",
+    href: "/admin/content/pages",
+    icon: <Layout className="w-5 h-5" />,
+  },
+  {
+    name: "Blog Posts",
+    href: "/admin/content/blog",
+    icon: <FileText className="w-5 h-5" />,
+  },
+  {
+    name: "Testimonials",
+    href: "/admin/content/testimonials",
+    icon: <MessageSquare className="w-5 h-5" />,
+  },
 ];
 
-export default function AdminSidebar({ isMobile = false, onClose }: SidebarProps) {
+export default function AdminSidebar({
+  isMobile = false,
+  onClose,
+}: SidebarProps) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
@@ -138,4 +157,3 @@ export default function AdminSidebar({ isMobile = false, onClose }: SidebarProps
     </>
   );
 }
-

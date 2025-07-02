@@ -1,5 +1,4 @@
-
-'use client';
+"use client";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -9,7 +8,11 @@ type VideoModalProps = {
   videoUrl: string;
 };
 
-export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
+export default function VideoModal({
+  isOpen,
+  onClose,
+  videoUrl,
+}: VideoModalProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 

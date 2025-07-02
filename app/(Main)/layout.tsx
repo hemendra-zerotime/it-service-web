@@ -1,4 +1,3 @@
-
 import ClientLayout from "@/components/ClientLayout";
 export default function SiteLayout({
   children,
@@ -7,9 +6,7 @@ export default function SiteLayout({
 }>) {
   return (
     <>
-        <ClientLayout>
-        {children}
-        </ClientLayout>
+      <ClientLayout>{children}</ClientLayout>
     </>
   );
 }

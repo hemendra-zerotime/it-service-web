@@ -15,7 +15,7 @@ export function showSuccessToast(title: string, message: string) {
     {
       className:
         "bg-white text-black border border-black/10 shadow-[0_2px_10px_rgba(0,0,0,0.1)] rounded-xl",
-        duration:10000,
+      duration: 10000,
     }
   );
 }

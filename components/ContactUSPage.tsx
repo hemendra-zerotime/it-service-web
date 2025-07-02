@@ -82,12 +82,12 @@ type FormFieldProps = {
 };
 
 type EnquiryData = {
- firstName:string;
- lastName:string;
- phone?:string;
- email:string;
- message:string;
-  createdAt: Date; 
+  firstName: string;
+  lastName: string;
+  phone?: string;
+  email: string;
+  message: string;
+  createdAt: Date;
 };
 
 const FormField = ({
@@ -123,14 +123,14 @@ const FormField = ({
   </div>
 );
 
-async function sendDatatoFirestore(enquirydata:EnquiryData){
- try {
-     await addDoc(collection(db,"enquiry"),enquirydata)
+async function sendDatatoFirestore(enquirydata: EnquiryData) {
+  try {
+    await addDoc(collection(db, "enquiry"), enquirydata);
     return true;
- } catch (error) {
-    console.error("Error adding document ",error)
-    return false
- }
+  } catch (error) {
+    console.error("Error adding document ", error);
+    return false;
+  }
 }
 export function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -164,7 +164,7 @@ export function ContactUsPage() {
     return newErrors;
   };
 
-  const handleSubmit = async(e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -173,19 +173,30 @@ export function ContactUsPage() {
     }
 
     const dataToSend: EnquiryData = {
-    ...formData,
-    createdAt: new Date()
-  };
+      ...formData,
+      createdAt: new Date(),
+    };
 
-  const ok = await sendDatatoFirestore(dataToSend);
+    const ok = await sendDatatoFirestore(dataToSend);
 
-  if (ok) {
-    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-  showSuccessToast("Thanks for getting in touch!", "We’ve received your message and will respond within 24 hours.");
-
-  } else {
-   showErrorToast("Submission failed!", "Please try again or contact support.");
-  }
+    if (ok) {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      showSuccessToast(
+        "Thanks for getting in touch!",
+        "We’ve received your message and will respond within 24 hours."
+      );
+    } else {
+      showErrorToast(
+        "Submission failed!",
+        "Please try again or contact support."
+      );
+    }
   };
 
   return (
@@ -304,7 +315,11 @@ export function ContactUsPage() {
               Send us a Message
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4 text-gray-600" noValidate>
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 text-gray-600"
+              noValidate
+            >
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   id="first-name"
@@ -363,9 +378,7 @@ export function ContactUsPage() {
                   className={`w-full rounded-md border bg-white/10 px-3 py-2 text-sm text-gray-600 shadow-sm placeholder:text-gray-500 
     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bpc focus-visible:ring-offset-2
     ${
-      errors.message
-        ? "border-bpc focus-visible:ring-bpc"
-        : "border-gray-300"
+      errors.message ? "border-bpc focus-visible:ring-bpc" : "border-gray-300"
     }`}
                   value={formData.message}
                   onChange={handleChange}

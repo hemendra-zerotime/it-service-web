@@ -49,9 +49,7 @@ export default function SignInPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4 py-12 space-y-6">
       {/* 🧭 Admin heading */}
-      <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">
-        Admin
-      </h1>
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">Admin</h1>
 
       <div className="w-full max-w-sm bg-white p-6 rounded-xl shadow-md text-center space-y-6">
         <div className="flex justify-center">

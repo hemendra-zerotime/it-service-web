@@ -1,11 +1,6 @@
 "use client";
 import ClientMediaGallery from "@/components/ClientMediaGallery";
-import {
-  BarChart3,
-  Lightbulb,
-  LineChart,
-  SearchCheck,
-} from "lucide-react";
+import { BarChart3, Lightbulb, LineChart, SearchCheck } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
@@ -55,7 +50,8 @@ export default function ServicesPageClient() {
         "Your website is your business's first impression. We design and develop custom websites that are visually appealing, mobile-responsive, SEO-friendly, and optimized to convert visitors into customers.",
       shortDescription:
         "Custom-designed, responsive websites built to grow your brand and sales.",
-      image:"https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228850/nextjs-gallery/orxyp8mbxuhre2lmh4ir.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228850/nextjs-gallery/orxyp8mbxuhre2lmh4ir.jpg",
       features: [
         "Responsive UI/UX design",
         "SEO-ready code structure",
@@ -74,7 +70,8 @@ export default function ServicesPageClient() {
         "Struggling to get found on Google? Our SEO service helps your website rank higher, reach the right audience, and drive consistent organic traffic. From keyword research to technical audits and quality backlinks, we optimize every aspect of your web presence.",
       shortDescription:
         "Boost your site's visibility and drive organic traffic with powerful SEO strategies.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751206616/nextjs-gallery/p04xqinz523njjlik5rw.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751206616/nextjs-gallery/p04xqinz523njjlik5rw.jpg",
       features: [
         "Keyword research & optimization",
         "Technical SEO audits",
@@ -93,7 +90,8 @@ export default function ServicesPageClient() {
         "Social media is where your audience lives. We help you engage them with creative, consistent, and strategic content that builds your brand, fuels engagement, and drives real business growth across platforms.",
       shortDescription:
         "Build awareness and customer loyalty through strategic social media engagement.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227136/nextjs-gallery/oibihyrxtcswfu8yesr4.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227136/nextjs-gallery/oibihyrxtcswfu8yesr4.jpg",
       features: [
         "Content scheduling & automation",
         "Influencer collaboration",
@@ -112,7 +110,8 @@ export default function ServicesPageClient() {
         "Want fast results? Our PPC experts create high-performing ad campaigns that reach your ideal customers and deliver conversions quickly—while keeping your budget optimized and your ROI strong.",
       shortDescription:
         "Drive instant leads and conversions through data-backed ad strategies.",
-      image:"https://res.cloudinary.com/dnhtqoroy/image/upload/v1751226568/nextjs-gallery/znphz1dhp2uexxypolwg.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751226568/nextjs-gallery/znphz1dhp2uexxypolwg.jpg",
       features: [
         "Google Ads & Meta Ads",
         "Conversion tracking",
@@ -131,7 +130,8 @@ export default function ServicesPageClient() {
         "Your brand deserves to stand out. Our graphic design and branding services ensure your visual identity is bold, consistent, and unforgettable—from logos and color palettes to marketing materials and brand guides.",
       shortDescription:
         "Create a memorable brand identity with stunning design and cohesive branding.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228338/nextjs-gallery/zydbphw94cvax9fgdrvn.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751228338/nextjs-gallery/zydbphw94cvax9fgdrvn.jpg",
       features: [
         "Logo & brand identity design",
         "Marketing & promotional materials",
@@ -150,7 +150,8 @@ export default function ServicesPageClient() {
         "Content is king in the digital world. We create scroll-stopping reels, engaging posts, and captivating videos tailored for each platform to amplify your brand and connect with your audience.",
       shortDescription:
         "High-impact content that gets your brand noticed and remembered.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227963/nextjs-gallery/wtn668oe4iheycuym3h1.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227963/nextjs-gallery/wtn668oe4iheycuym3h1.jpg",
       features: [
         "Reels and short-form video creation",
         "Custom graphic posts & carousels",
@@ -169,7 +170,8 @@ export default function ServicesPageClient() {
         "Sell smarter online with our end-to-end e-commerce solutions. From platform setup to payment integration and product management, we build scalable online stores designed to convert and grow.",
       shortDescription:
         "Launch and scale your online store with robust e-commerce development.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227515/nextjs-gallery/ylq0blyvwgeas7jukw3c.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751227515/nextjs-gallery/ylq0blyvwgeas7jukw3c.jpg",
       features: [
         "Shopify, WooCommerce, custom builds",
         "Secure payment gateway integration",
@@ -188,7 +190,8 @@ export default function ServicesPageClient() {
         "Professional email and reliable hosting are the foundation of your digital operations. We offer secure business email setup and ongoing support, along with high-performance hosting solutions tailored to your needs.",
       shortDescription:
         "Get reliable email and hosting solutions to keep your business running smoothly.",
-      image: "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751225893/nextjs-gallery/icx9q4r4t15lwskxmwww.jpg",
+      image:
+        "https://res.cloudinary.com/dnhtqoroy/image/upload/v1751225893/nextjs-gallery/icx9q4r4t15lwskxmwww.jpg",
       features: [
         "Business email setup (Google Workspace, Zoho, etc.)",
         "Secure, fast web hosting",
@@ -201,26 +204,26 @@ export default function ServicesPageClient() {
       ],
     },
   ];
-const workSteps = [
-  {
-    id: "01.",
-    title: "Talk With Our Expert Team",
-    description:
-      "Start your journey by connecting with our skilled digital marketing team to discuss your business goals and challenges.",
-  },
-  {
-    id: "02.",
-    title: "Plan Customized Strategies",
-    description:
-      "We’ll craft a personalized digital plan tailored to your brand, focusing on traffic growth, brand visibility, and ROI.",
-  },
-  {
-    id: "03.",
-    title: "Execute Marketing Campaigns",
-    description:
-      "From SEO and paid ads to social media content, we implement results-driven campaigns to ensure maximum conversions.",
-  },
-];
+  const workSteps = [
+    {
+      id: "01.",
+      title: "Talk With Our Expert Team",
+      description:
+        "Start your journey by connecting with our skilled digital marketing team to discuss your business goals and challenges.",
+    },
+    {
+      id: "02.",
+      title: "Plan Customized Strategies",
+      description:
+        "We’ll craft a personalized digital plan tailored to your brand, focusing on traffic growth, brand visibility, and ROI.",
+    },
+    {
+      id: "03.",
+      title: "Execute Marketing Campaigns",
+      description:
+        "From SEO and paid ads to social media content, we implement results-driven campaigns to ensure maximum conversions.",
+    },
+  ];
 
   return (
     <>
@@ -452,63 +455,65 @@ const workSteps = [
             />
           )}
         </section>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div className="flex items-center justify-center gap-3 mb-4">
-    <div className="w-10 h-[2px] bg-bpc rounded-full"></div>
-    <p className="text-bpc text-center text-sm font-semibold uppercase tracking-wide">
-      How It’s Work:
-    </p>
-  </div>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-[2px] bg-bpc rounded-full"></div>
+            <p className="text-bpc text-center text-sm font-semibold uppercase tracking-wide">
+              How It’s Work:
+            </p>
+          </div>
 
-  {/* Main Content Flex Layout */}
-  <div className="flex flex-col lg:flex-row gap-10 items-stretch">
-    {/* Left Image */}
-    <div className="w-full lg:w-[35%]">
-      <Image
-        src={`https://res.cloudinary.com/dnhtqoroy/image/upload/v1751230945/nextjs-gallery/fdapnup8yeqtlvgfc6ur.jpg`}
-        alt="Meeting"
-        width={500}
-        height={700}
-        className="rounded-2xl w-full h-full object-cover aspect-square"
-      />
-    </div>
+          {/* Main Content Flex Layout */}
+          <div className="flex flex-col lg:flex-row gap-10 items-stretch">
+            {/* Left Image */}
+            <div className="w-full lg:w-[35%]">
+              <Image
+                src={`https://res.cloudinary.com/dnhtqoroy/image/upload/v1751230945/nextjs-gallery/fdapnup8yeqtlvgfc6ur.jpg`}
+                alt="Meeting"
+                width={500}
+                height={700}
+                className="rounded-2xl w-full h-full object-cover aspect-square"
+              />
+            </div>
 
-    {/* Right Content (Text + Video) */}
-    <div className="w-full lg:w-[65%] flex flex-col justify-between">
-      {/* Heading */}
-      <h2 className="text-[#0B1B36] text-3xl md:text-4xl font-bold leading-snug mb-10 max-w-2xl">
-        Drive More Traffic and Increase Conversions With Proven Digital Strategies
-      </h2>
+            {/* Right Content (Text + Video) */}
+            <div className="w-full lg:w-[65%] flex flex-col justify-between">
+              {/* Heading */}
+              <h2 className="text-[#0B1B36] text-3xl md:text-4xl font-bold leading-snug mb-10 max-w-2xl">
+                Drive More Traffic and Increase Conversions With Proven Digital
+                Strategies
+              </h2>
 
-      {/* Steps + Video */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-        {/* Step List */}
-        <div className="space-y-6">
-          {workSteps.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-start space-x-4 border-b pb-4 border-dashed border-gray-300"
-            >
-              <span className="text-bpc font-bold text-xl">{item.id}</span>
-              <div>
-                <h4 className="text-[#0B1B36] font-semibold text-[16px]">
-                  {item.title}
-                </h4>
-                <p className="text-gray-500 text-sm">
-                  {item.description}
-                </p>
+              {/* Steps + Video */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                {/* Step List */}
+                <div className="space-y-6">
+                  {workSteps.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start space-x-4 border-b pb-4 border-dashed border-gray-300"
+                    >
+                      <span className="text-bpc font-bold text-xl">
+                        {item.id}
+                      </span>
+                      <div>
+                        <h4 className="text-[#0B1B36] font-semibold text-[16px]">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-500 text-sm">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Video Preview */}
+                <VideoPreview />
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Video Preview */}
-        <VideoPreview />
-      </div>
-    </div>
-  </div>
-</section>
-
+          </div>
+        </section>
       </main>
     </>
   );

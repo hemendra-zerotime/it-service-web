@@ -82,7 +82,12 @@ export default function Features() {
       </h2>
       <div className="flex justify-center items-center">
         <p className="text-gray-900 mb-10 max-w-5xl text-1xl">
-          As a results-driven digital partner, we specialize in crafting high-performing websites and executing data-backed digital marketing strategies that drive real business growth. Our professional team combines SEO, performance marketing, and smart automation tools like WhatsApp CRM and IVR to boost your brand visibility, engagement, and ROI. Choose us to scale smarter, rank higher, and convert better.
+          As a results-driven digital partner, we specialize in crafting
+          high-performing websites and executing data-backed digital marketing
+          strategies that drive real business growth. Our professional team
+          combines SEO, performance marketing, and smart automation tools like
+          WhatsApp CRM and IVR to boost your brand visibility, engagement, and
+          ROI. Choose us to scale smarter, rank higher, and convert better.
         </p>
       </div>
 

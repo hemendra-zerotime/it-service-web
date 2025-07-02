@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { FaWhatsapp } from "react-icons/fa";
 

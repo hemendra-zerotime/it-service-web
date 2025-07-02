@@ -57,7 +57,8 @@ export const AnimatedTestimonials = ({
         What Our Clients Say
       </h2>
       <p className="text-center text-gray-600 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10">
-         Discover how our services have made a measurable impact — real feedback from clients who trust and value our work.
+        Discover how our services have made a measurable impact — real feedback
+        from clients who trust and value our work.
       </p>
 
       <div className="mx-auto px-4 max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

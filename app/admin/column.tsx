@@ -57,7 +57,9 @@ export const columns: ColumnDef<Enquiry>[] = [
             title="Click to expand/collapse"
           >
             <span className="block w-full truncate">
-              {expanded ? message : `${message.slice(0, 40)}${message.length > 40 ? "..." : ""}`}
+              {expanded
+                ? message
+                : `${message.slice(0, 40)}${message.length > 40 ? "..." : ""}`}
             </span>
             {message.length > 40 && (
               <span className="ml-2">

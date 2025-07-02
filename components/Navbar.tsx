@@ -81,17 +81,17 @@ const Navigation = () => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md border-b border-white/10">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
-               <div  key={item.name} >
-                 <Link
-                  href={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
-                    isActive(item.path) ? "text-red-400" : "text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-               </div>
+                <div key={item.name}>
+                  <Link
+                    href={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
+                      isActive(item.path) ? "text-red-400" : "text-white"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </div>
               ))}
               <Link href={"/contact"}>
                 {" "}

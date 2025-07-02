@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import { Play } from "lucide-react";
@@ -11,9 +11,9 @@ export default function VideoPreview() {
   return (
     <>
       <div
-   className="relative col-span-1 row-span-2 group rounded-xl overflow-hidden cursor-pointer aspect-video"
-  onClick={() => setIsOpen(true)}
->
+        className="relative col-span-1 row-span-2 group rounded-xl overflow-hidden cursor-pointer aspect-video"
+        onClick={() => setIsOpen(true)}
+      >
         <Image
           src="https://res.cloudinary.com/dnhtqoroy/image/upload/v1751132878/nextjs-gallery/mkpftcclwfoskngwvjtq.png"
           alt="Video Preview"

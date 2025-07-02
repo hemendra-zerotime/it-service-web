@@ -7,14 +7,15 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 const AdminNavbar = () => {
-  const router= useRouter();
-  const handleLogout = async() => {
-   try {
+  const router = useRouter();
+  const handleLogout = async () => {
+    try {
       // Firebase sign out
       await signOut(auth);
 
       // Clear admin cookie
-      document.cookie = "admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie =
+        "admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
       // Redirect to sign-in
       router.replace("/sign-in");

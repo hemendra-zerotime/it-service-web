@@ -35,7 +35,7 @@ export default function ServiceModal({ service, onClose }: Props) {
           sm:w-full sm:h-auto 
           md:max-w-2xl lg:max-w-4xl
         `}
-        onClick={(e) => e.stopPropagation()} 
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <Button
@@ -90,14 +90,11 @@ export default function ServiceModal({ service, onClose }: Props) {
               </ul>
             </div>
           )}
-<Link href={"/contact"}>
-          <Button
-                    
-                    className="w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white"
-                  >
-                    Contact us
-                  </Button>
-                  </Link>
+          <Link href={"/contact"}>
+            <Button className="w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-500 text-white">
+              Contact us
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

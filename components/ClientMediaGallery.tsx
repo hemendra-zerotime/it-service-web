@@ -49,7 +49,7 @@ export default function ClientMediaGallery() {
         <VideoModal
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
-          videoUrl="https://www.youtube.com/embed/ZwNLjEag8zw"
+          videoUrl="https://www.youtube.com/embed/c6CeeRv2xy4?si=uYJu6UnGnoKfbMpl"
         />
       )}
     </>
