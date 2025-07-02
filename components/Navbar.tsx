@@ -85,7 +85,7 @@ const Navigation = () => {
                  <Link
                   href={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`border text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
+                  className={`text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
                     isActive(item.path) ? "text-red-400" : "text-white"
                   }`}
                 >
