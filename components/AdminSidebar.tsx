@@ -8,13 +8,21 @@ import {
   Layout,
   FileText,
   MessageSquare,
-  X,
 } from "lucide-react";
+import AnimatedMobileMenu from "@/components/AnimatedMobileMenu";
 
-type SidebarProps = {
-  isMobile?: boolean;
-  onClose?: () => void;
+// ✅ Discriminated union types
+type MobileSidebarProps = {
+  isMobile: true;
+  isOpen: boolean;
+  onClose: () => void;
 };
+
+type DesktopSidebarProps = {
+  isMobile?: false;
+};
+
+type SidebarProps = MobileSidebarProps | DesktopSidebarProps;
 
 const navLinks = [
   { name: "Home", href: "/admin", icon: <Home className="w-5 h-5" /> },
@@ -43,117 +51,101 @@ const contentLinks = [
   },
 ];
 
-export default function AdminSidebar({
-  isMobile = false,
-  onClose,
-}: SidebarProps) {
+export default function AdminSidebar(props: SidebarProps) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
-  return (
-    <>
-      {isMobile ? (
-        <aside className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm">
-          {/* Close button on blurred background */}
-          <button
-            className="absolute top-4 right-4 text-black hover:text-red-500 text-xl z-50"
-            onClick={onClose}
-            aria-label="Close sidebar"
+  const sidebarContent = (
+    <div className="space-y-6">
+      <div className="space-y-4">
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            onClick={"onClose" in props ? props.onClose : undefined}
+            className={`flex items-center gap-3 text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
+              isActive(link.href) ? "text-red-400" : "text-white"
+            }`}
           >
-            <X className="w-6 h-6 p-1 rounded-full bg-white shadow" />
-          </button>
+            {link.icon}
+            {link.name}
+          </Link>
+        ))}
+      </div>
+      <div>
+        <p className="text-xs text-gray-400 uppercase font-semibold mb-2">
+          Content Management
+        </p>
+        <div className="space-y-2">
+          {contentLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={"onClose" in props ? props.onClose : undefined}
+              className={`flex items-center gap-3 text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
+                isActive(link.href) ? "text-red-400" : "text-white"
+              }`}
+            >
+              {link.icon}
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 
-          {/* Sidebar panel */}
-          <div className="w-64 bg-white h-full shadow-lg p-6 absolute left-0 top-0 z-40">
-            {/* Nav */}
-            <nav className="space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={onClose}
-                  className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
-                    isActive(link.href)
-                      ? "bg-red-100 text-red-600"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  {link.icon}
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
+  if (props.isMobile) {
+    return (
+      <AnimatedMobileMenu isOpen={props.isOpen} onClose={props.onClose}>
+        {sidebarContent}
+      </AnimatedMobileMenu>
+    );
+  }
 
-            {/* Content Management */}
-            <div className="mt-6">
-              <p className="text-xs text-gray-500 uppercase font-semibold px-4 mb-2">
-                Content Management
-              </p>
-              <nav className="space-y-2">
-                {contentLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={onClose}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
-                      isActive(link.href)
-                        ? "bg-red-100 text-red-600"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    {link.icon}
-                    {link.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </aside>
-      ) : (
-        <aside className="hidden md:block">
-          <div className="w-64 bg-white min-h-screen border-r shadow-sm sticky top-20 px-4 py-6">
-            {/* Desktop Sidebar */}
-            <nav className="space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
-                    isActive(link.href)
-                      ? "bg-red-100 text-red-600"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  {link.icon}
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
+  // Desktop sidebar
+  return (
+    <aside className="hidden md:block">
+      <div className="w-64 bg-white min-h-screen border-r shadow-sm sticky top-20 px-4 py-6">
+        <nav className="space-y-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
+                isActive(link.href)
+                  ? "bg-red-100 text-red-600"
+                  : "text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {link.icon}
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
-            <div className="mt-6">
-              <p className="text-xs text-gray-500 uppercase font-semibold px-4 mb-2">
-                Content Management
-              </p>
-              <nav className="space-y-2">
-                {contentLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
-                      isActive(link.href)
-                        ? "bg-red-100 text-red-600"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    {link.icon}
-                    {link.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </aside>
-      )}
-    </>
+        <div className="mt-6">
+          <p className="text-xs text-gray-500 uppercase font-semibold px-4 mb-2">
+            Content Management
+          </p>
+          <nav className="space-y-2">
+            {contentLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition ${
+                  isActive(link.href)
+                    ? "bg-red-100 text-red-600"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {link.icon}
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </aside>
   );
 }

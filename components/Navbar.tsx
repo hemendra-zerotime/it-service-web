@@ -7,6 +7,7 @@ import { Menu, X, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ShimmerButton } from "./magicui/shimmer-button";
+import AnimatedMobileMenu from "./AnimatedMobileMenu";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -77,34 +78,32 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-md border-b border-white/10">
-            <div className="px-6 py-4 space-y-4">
-              {navItems.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    href={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors duration-300 hover:text-red-400 ${
-                      isActive(item.path) ? "text-red-400" : "text-white"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </div>
-              ))}
-              <Link href={"/contact"}>
-                {" "}
-                <ShimmerButton
-                  background="rgba(220, 38, 38, 1)"
-                  className="w-full font bold mt-4"
-                >
-                  Get in touch
-                </ShimmerButton>
-              </Link>
-            </div>
-          </div>
-        )}
+       <AnimatedMobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+  <div className="px-6 py-32 space-y-8 text-center">
+    {navItems.map((item) => (
+      <Link
+        key={item.name}
+        href={item.path}
+        onClick={() => setIsOpen(false)}
+        className={`block text-2xl font-medium transition-colors duration-300 hover:text-bpc ${
+          isActive(item.path) ? "text-bpc" : "text-white"
+        }`}
+      >
+        {item.name}
+      </Link>
+    ))}
+    <Link href="/contact">
+      <ShimmerButton
+        background="rgba(220, 38, 38, 1)"
+        className="w-full mt-8"
+      >
+        Get in touch
+      </ShimmerButton>
+    </Link>
+  </div>
+</AnimatedMobileMenu>
+
+      
       </div>
     </nav>
   );

@@ -1,9 +1,9 @@
 "use client";
 
+import { useState } from "react";
+import { Menu } from "lucide-react";
 import AdminNavbar from "@/components/AdminNavbar";
 import AdminSidebar from "@/components/AdminSidebar";
-import { Menu } from "lucide-react";
-import { useState } from "react";
 
 export default function AdminLayout({
   children,
@@ -14,10 +14,9 @@ export default function AdminLayout({
 
   return (
     <div className="bg-gray-50 text-gray-800">
-      {" "}
-      {/* ✅ Prevent layout overflow */}
       <AdminNavbar />
-      {/* Mobile header bar */}
+
+      {/* Mobile Header Bar */}
       <div className="md:hidden px-4 py-3 border-b bg-white shadow-sm flex justify-between items-center">
         <span className="text-lg font-semibold text-gray-700">Admin Panel</span>
         <button
@@ -27,20 +26,20 @@ export default function AdminLayout({
           <Menu className="w-6 h-6" />
         </button>
       </div>
-      {/* Layout body */}
+
       <div className="flex">
-        {/* Sidebar for desktop */}
+        {/* Desktop Sidebar */}
         <AdminSidebar />
 
-        {/* Sidebar for mobile */}
-        {sidebarOpen && (
-          <AdminSidebar isMobile={true} onClose={() => setSidebarOpen(false)} />
-        )}
+        {/* Mobile Sidebar (Animated) */}
+        <AdminSidebar
+          isMobile
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
-        {/* Main content */}
+        {/* Main Content */}
         <main className="flex-1 p-4 sm:p-6 md:p-10 overflow-x-auto">
-          {" "}
-          {/* ✅ Scroll table here only */}
           {children}
         </main>
       </div>
