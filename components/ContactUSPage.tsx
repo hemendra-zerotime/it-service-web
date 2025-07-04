@@ -90,6 +90,21 @@ type EnquiryData = {
   createdAt: Date;
 };
 
+const features = [
+  {
+    title: "Free Discovery Call",
+    desc: "Let’s discuss your goals and define what success means for your business.",
+  },
+  {
+    title: "Proven Results",
+    desc: "We’ve helped brands boost traffic, leads, and engagement with result-driven digital strategies.",
+  },
+  {
+    title: "Creative Collaboration",
+    desc: "Work hand-in-hand with a friendly, experienced team that truly understands your vision.",
+  },
+];
+
 const FormField = ({
   id,
   name,
@@ -211,33 +226,18 @@ export function ContactUsPage() {
           provide personalized digital solutions to bring your vision to life.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mt-10">
-          <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-lg font-semibold text-bpc">
-              Free Discovery Call
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              Let’s discuss your goals and define what success means for your
-              business.
-            </p>
-          </div>
-          <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-lg font-semibold text-bpc">Proven Results</h3>
-            <p className="text-sm text-gray-600 mt-2">
-              We’ve helped brands boost traffic, leads, and engagement with
-              result-driven digital strategies.
-            </p>
-          </div>
-          <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-lg font-semibold text-bpc">
-              Creative Collaboration
-            </h3>
-            <p className="text-sm text-gray-600 mt-2">
-              Work hand-in-hand with a friendly, experienced team that truly
-              understands your vision.
-            </p>
-          </div>
-        </div>
+       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mt-10">
+  {features.map((item, index) => (
+    <div
+      key={index}
+      className="bg-white border-t-4 border-bpc rounded-xl px-6 py-4 shadow-md text-left"
+    >
+      <h3 className="text-base font-semibold  mb-1">{item.title}</h3>
+      <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
+    </div>
+  ))}
+</div>
+
       </section>
 
       <section className="w-full max-w-7xl mx-auto bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl shadow-lg text-white overflow-hidden px-4 py-8 sm:px-6 md:px-10 lg:px-16">
