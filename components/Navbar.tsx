@@ -31,8 +31,8 @@ const Navigation = () => {
             <Image
               src={"/weblogo.svg"}
               alt={"site-logo"}
-              width={150}
-              height={150}
+              width={100}
+              height={100}
             />
           </Link>
 
@@ -42,8 +42,8 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 href={item.path}
-                className={`text-lg font-medium transition-all duration-300 hover:text-red-400 relative group ${
-                  isActive(item.path) ? "text-red-400" : "text-black"
+                className={`text-lg font-medium transition-all duration-300 hover:text-bpc relative group ${
+                  isActive(item.path) ? "text-bpc" : "text-black"
                 }`}
               >
                 {item.name}
@@ -66,7 +66,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-black hover:text-red-400 transition-colors duration-300"
+              className="p-2 text-black hover:text-bpc transition-colors duration-300"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />

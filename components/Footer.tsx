@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <Image src="/weblogo.svg" alt="Logo" width={150} height={80} />
+              <Image src="/weblogo.svg" alt="Logo" width={100} height={100} />
             </Link>
             <p className="text-sm">
               We're a team of passionate developers and marketers helping
