@@ -147,15 +147,4 @@
   }
 }
 
-/* styles/globals.css or any global stylesheet */
-.hero-bg {
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(202, 248, 255, 1) 0%,
-    rgba(186, 204, 227, 1) 51.2%,
-    rgba(117, 144, 179, 1) 100.1%
-  );
 
-  background-size: cover;
-  background-position: center;
-}

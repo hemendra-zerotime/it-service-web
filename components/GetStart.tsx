@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { ShimmerButton } from "./magicui/shimmer-button";
-import { IconArrowRight } from "@tabler/icons-react";
+import { ArrowRight } from "lucide-react";
 
 const GetStart = () => {
   return (
@@ -20,7 +20,7 @@ const GetStart = () => {
           <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
             Get in Touch
           </span>
-          <IconArrowRight className="h-5 w-5 ml-2 text-white transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+          <ArrowRight className="h-5 w-5 ml-2 text-white transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
         </ShimmerButton>
       </Link>
     </section>

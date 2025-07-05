@@ -73,6 +73,17 @@ export const metadata: Metadata = {
     "India digital marketing team",
     "top-rated web agency",
   ],
+  applicationName: "Fully Digital Agency",
+  authors: [
+    { name: "Fully Digital Agency", url: "https://fullydigitalagency.online" },
+  ],
+  creator: "Fully Digital Agency",
+  publisher: "Fully Digital Agency",
+  category: "Digital Marketing & Technology",
+  metadataBase: new URL("https://fullydigitalagency.online"),
+  alternates: {
+    canonical: "https://fullydigitalagency.online/services",
+  },
   openGraph: {
     title: "Explore Our Services | Fully Digital Agency",
     description:
@@ -96,9 +107,7 @@ export const metadata: Metadata = {
     description:
       "Get high-impact digital services: websites, SEO, paid ads, CRM, content & automation to boost your brand visibility and conversions.",
     images: ["https://fullydigitalagency.online/banner.jpg"],
-  },
-  alternates: {
-    canonical: "https://fullydigitalagency.online/services",
+    creator: "@FullyDigitalAgency", // Add Twitter handle if available
   },
   robots: {
     index: true,
@@ -113,7 +122,15 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  verification: {
+    google: "cYbTHQCUCjTPIPG6g-K1jzAxMaVqUImN96_9vMS_tA0",
+  },
 };
+
 
 export default function ServicesPage() {
   return <ServicesPageClient />;
