@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/GoogleAnalytics";
+import { Suspense } from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -118,7 +119,9 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      ><Analytics/>
+      > <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         {children}
         <Toaster position="top-center" richColors expand={true} />
       </body>
