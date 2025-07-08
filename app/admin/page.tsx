@@ -7,9 +7,6 @@ import { Button } from "@/components/ui/button";
 import { collection, getDocs } from "firebase/firestore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatDate } from "@/lib/utils";
-async function fetchEnquiryData() {
-  const querySnapshotb = await getDocs(collection(db, "enquiry"));
-}
 export default function EnquiriesPage() {
   const [data, setData] = useState<Enquiry[]>([]);
   const [loading, setLoading] = useState(true);
