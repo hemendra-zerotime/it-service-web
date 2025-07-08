@@ -4,11 +4,11 @@ import { Enquiry } from "./column";
 import { db } from "@/lib/firebase";
 import EnquiryTable from "./data-table";
 import { Button } from "@/components/ui/button";
-import {collection,getDocs} from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatDate } from "@/lib/utils";
-async function fetchEnquiryData(){
-  const querySnapshotb= await getDocs(collection(db,"enquiry"))
+async function fetchEnquiryData() {
+  const querySnapshotb = await getDocs(collection(db, "enquiry"));
 }
 export default function EnquiriesPage() {
   const [data, setData] = useState<Enquiry[]>([]);
@@ -24,9 +24,7 @@ export default function EnquiriesPage() {
             lastName: d.lastName || "NA",
             mobile: d.phone || "NA",
             email: d.email || "NA",
-           date: d.createdAt?.toDate
-      ? formatDate(d.createdAt.toDate())
-      : "NA", 
+            date: d.createdAt?.toDate ? formatDate(d.createdAt.toDate()) : "NA",
             message: d.message || "NA",
           };
         });
@@ -40,7 +38,6 @@ export default function EnquiriesPage() {
 
     fetchEnquiryData();
   }, []);
-
 
   return (
     <div className="px-4 py-10 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
@@ -82,21 +79,21 @@ export default function EnquiriesPage() {
       </div>
 
       {loading ? (
-             <div className="space-y-4">
-    {Array.from({ length: 8 }).map((_, i) => (
-      <div
-        key={i}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
-      >
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
-        <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
-      </div>
-    ))}
-  </div>
+        <div className="space-y-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div
+              key={i}
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+            >
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md" />
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
+              <Skeleton className="h-8 bg-gray-300 dark:bg-gray-700 rounded-md hidden lg:block" />
+            </div>
+          ))}
+        </div>
       ) : (
         <EnquiryTable data={data} />
       )}
