@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const isLoggedIn = request.cookies.get("admin")?.value === "true";
-
+   const adminToken = request.cookies.get("__SecureAdmin")?.value;
+  const isLoggedIn = !!adminToken;
   if (request.nextUrl.pathname.startsWith("/admin") && !isLoggedIn) {
     return NextResponse.redirect(new URL("/sign-in", request.url));
   }

@@ -9,20 +9,20 @@ import { auth } from "@/lib/firebase";
 const AdminNavbar = () => {
   const router = useRouter();
   const handleLogout = async () => {
-    try {
-      // Firebase sign out
-      await signOut(auth);
+  try {
+    // Firebase sign out
+    await signOut(auth);
 
-      // Clear admin cookie
-      document.cookie =
-        "admin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    // Clear updated secure cookie
+    document.cookie =
+      "__SecureAdmin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; secure; samesite=strict";
 
-      // Redirect to sign-in
-      router.replace("/sign-in");
-    } catch (error) {
-      console.error("Logout failed:", error);
-    }
-  };
+    // Redirect to sign-in
+    router.replace("/sign-in");
+  } catch (error) {
+    console.error("Logout failed:", error);
+  }
+};
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-gradient-to-r from-stone-100 to-stone-200 border-b border-white/10 shadow-sm">
