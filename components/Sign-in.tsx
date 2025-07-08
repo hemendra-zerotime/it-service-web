@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import Image from "next/image";
-import { signInWithPopup } from "firebase/auth";
+import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, provider, db } from "@/lib/firebase";
 
@@ -16,7 +16,22 @@ export default function SignInPage() {
   // ✅ If already logged in, redirect to /admin
   useEffect(() => {
     const hasAdminCookie = document.cookie.includes("admin=true");
-    if (hasAdminCookie) {
+ if (!hasAdminCookie) {
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const email = user.email || "";
+          const adminRef = doc(db, "admins", email);
+          const adminSnap = await getDoc(adminRef);
+
+          if (adminSnap.exists()) {
+            document.cookie = "admin=true; path=/; SameSite=Strict; Secure";
+            router.replace("/admin");
+          }
+        }
+      });
+
+      return () => unsubscribe();
+    } else {
       router.replace("/admin");
     }
   }, [router]);
@@ -38,7 +53,7 @@ export default function SignInPage() {
       }
 
       // ✅ Set cookie and redirect
-      document.cookie = "admin=true; path=/";
+      document.cookie = "admin=true; path=/; SameSite=Strict; Secure";
       router.replace("/admin");
     } catch (err) {
       console.error("Google Sign-In Error:", err);
